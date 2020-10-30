@@ -6,17 +6,66 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
 html{
     font-size: 62.5%;
+    font-family: 'Lato', sans-serif;
 }
 
 body{
     height: 100vh;
-    width: 100vh;
-    overflow: hidden;
+    font-size: 1.6rem;
+    position: relative;
 }
 
-main{
+/* Navbar */
+
+.navbar{
     display: flex;
-    margin: 0 30rem;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2rem 4rem;
+    background: #44A08D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #093637, #44A08D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #093637, #44A08D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #ffffff;
 }
+
+.nav{
+    display: flex;
+}
+
+.nav-link{
+    padding: 0 5rem ;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 1.1rem;
+    font-weight: 700;
+}
+
+.item-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.item-row{
+    display: flex;
+}
+
+
+.sidebar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding:6rem 2rem;
+}
+

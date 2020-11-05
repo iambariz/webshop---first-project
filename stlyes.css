@@ -101,25 +101,6 @@ input[type=number] {
 
 
 
-/* Cards styles */
-
-.item-card{
-    max-width: 25rem;
-    margin: 2rem 2rem;
-
-    border-radius: 2rem;
-}
-
-.image{
-    padding: 0rem 2rem;
-} 
-
-.productName{
-    border-top: 1px solid black;
-    text-align: center;
-    padding: 1rem;
-}
-
 
 /* Test card */
 
@@ -149,7 +130,7 @@ input[type=number] {
     padding: 0.5rem 0;
 }
 .price{
-    margin-top: 10rem;
+    margin-top: 8rem;
     margin-bottom: 0.5rem;
 }
 
@@ -172,7 +153,7 @@ input[type=number] {
     text-align: center;
     border: 2px solid #1f2f98;
     font-size: 1.8rem;
-    margin-right: 2rem;
+    padding-right: 4rem;
 }
 
 #quantity:hover,
@@ -184,4 +165,8 @@ input[type=number] {
 .btn-submit{
     border: 2px solid #1f2f98;
     font-weight: bold;
+}
+
+.purchase{
+    padding-bottom: 1rem;
 }

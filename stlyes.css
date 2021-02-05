@@ -147,7 +147,7 @@ input[type=number] {
     padding-right: 0.5rem;
 }
 
-#quantity{
+.quantity{
     max-width: 7.5rem;
     height: 4rem;
     text-align: center;
@@ -156,8 +156,8 @@ input[type=number] {
     padding-right: 4rem;
 }
 
-#quantity:hover,
-#quantity:focus
+.quantity:hover,
+.quantity:focus
 {
     border: 4px solid #1f2f98;
 }

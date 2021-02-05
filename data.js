@@ -32,6 +32,13 @@ itemEight = new item ("Nurofen", 8, 2.49, 6, 1, "drug"),
 */
 
 const items = [{
+    id: 0,
+    title: "Eggs",
+    category: "eggs",
+    price: 13.99,
+    img: "./images/test.jpg",
+  },
+  {
     id: 1,
     title: "Banana",
     category: "fruits",
@@ -94,11 +101,5 @@ const items = [{
     price: 6.99,
     img: "./images/test.jpg",
   },
-  {
-    id: 10,
-    title: "Eggs",
-    category: "eggs",
-    price: 13.99,
-    img: "./images/test.jpg",
-  },
+
 ]

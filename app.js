@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", function () {
     displayItems(items)
 })
 
+
 //display
 function displayItems(array) {
     let display = array.map(function (item) {
@@ -39,9 +40,17 @@ function addItem(e) {
     //console.log(id)
     //console.log(element);
     let quantity = e.target.parentElement.childNodes[1].value;
-    let newItem = new Item(id, items[id].title, quantity, items[id].price);
-    console.log(newItem);
-    //console.log("Value test: " + quantity);
-    basketItems.push(newItem);
-    console.log(basketItems);
+    if (quantity > 0) {
+        let newItem = new Item(id, items[id].title, quantity, items[id].price);
+        console.log(newItem);
+        //console.log("Value test: " + quantity);
+        basketItems.push(newItem);
+        console.log(basketItems);
+    } else {
+        //error msg needed
+        console.log("wrong");
+    }
+    //Set the quantity to 0 needed
+    console.log(quantity)
+    //Display sideitems needed
 }

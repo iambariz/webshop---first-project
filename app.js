@@ -29,15 +29,19 @@ function displayItems(array) {
     buttons.forEach(function (item) {
         item.addEventListener('click', addItem);
     })
-    console.log("Works");
-    console.log(buttons)
+    //console.log("Works");
+    //console.log(buttons)
 }
 
 function addItem(e) {
     let element = e.target.parentElement.parentElement.parentElement;
     let id = element.dataset.id;
-    console.log(id)
-    console.log(element);
-    //    let newItem = new Items("");
-
+    //console.log(id)
+    //console.log(element);
+    let quantity = e.target.parentElement.childNodes[1].value;
+    let newItem = new Item(id, items[id].title, quantity, items[id].price);
+    console.log(newItem);
+    //console.log("Value test: " + quantity);
+    basketItems.push(newItem);
+    console.log(basketItems);
 }

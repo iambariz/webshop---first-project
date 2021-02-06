@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", function () {
 function displayItems(array) {
     let display = array.map(function (item) {
         return `
-    <div class="item-card-test" dataset="${item.id}">
+    <div class="item-card-test" data-id="${item.id}">
         <div class="card-wrapper">
             <img class="image card-image" src="${item.img}" alt="product">
             <p class="test-name">${item.title}</p>
@@ -34,7 +34,10 @@ function displayItems(array) {
 }
 
 function addItem(e) {
-    console.log(e.target);
-}
+    let element = e.target.parentElement.parentElement.parentElement;
+    let id = element.dataset.id;
+    console.log(id)
+    console.log(element);
+    //    let newItem = new Items("");
 
-console.log(buttons)
+}

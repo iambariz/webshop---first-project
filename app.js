@@ -1,6 +1,5 @@
 const section = document.querySelector(".item-row");
 
-
 window.addEventListener("DOMContentLoaded", function () {
     displayItems(items)
 })
@@ -26,5 +25,16 @@ function displayItems(array) {
     });
     display = display.join("");
     section.innerHTML = display;
+    let buttons = document.querySelectorAll('.btn-submit');
+    buttons.forEach(function (item) {
+        item.addEventListener('click', addItem);
+    })
     console.log("Works");
+    console.log(buttons)
 }
+
+function addItem(e) {
+    console.log(e.target);
+}
+
+console.log(buttons)

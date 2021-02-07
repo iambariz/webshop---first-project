@@ -1,4 +1,6 @@
 const section = document.querySelector(".item-row");
+let duplicate = false;
+let duplicatedItem;
 
 window.addEventListener("DOMContentLoaded", function () {
     displayItems(items)
@@ -40,19 +42,29 @@ function addItem(e) {
     //console.log(id)
     //console.log(element);
     let quantity = e.target.parentElement.childNodes[1].value;
-    if (quantity > 0) {
-        let newItem = new Item(id, items[id].title, quantity, items[id].price);
-        //console.log(newItem);
-        //console.log("Value test: " + quantity);
-        basketItems.push(newItem);
-        //console.log(basketItems);
-    } else {
-        //error msg needed
-        console.log("wrong");
+    duplicateCheck(id);
+    if (duplicate == false) {
+        if (quantity > 0) {
+            let newItem = new Item(id, items[id].title, quantity, items[id].price);
+            //console.log(newItem);
+            //console.log("Value test: " + quantity);
+            basketItems.push(newItem);
+            //console.log(basketItems);
+        } else {
+            //error msg needed
+            //console.log("wrong");
+        }
     }
-    //Set the quantity to 0 needed
+    if (duplicate == true) {
+        basketItems[duplicatedItem].quantity =
+            parseInt(basketItems[duplicatedItem].quantity) + parseInt(quantity);
+        basketItems[duplicatedItem].price =
+            (basketItems[duplicatedItem].quantity * basketItems[duplicatedItem].unitPrice).toFixed(2)
+    }
+    duplicate = false
     //console.log(quantity);
     //Display basket
     basketDisplay(basketItems);
     updateTotal(basketItems);
+    //Set the quantity to 0 needed
 }

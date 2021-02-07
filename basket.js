@@ -16,6 +16,7 @@ class Item {
 
 }
 
+
 function basketDisplay(array) {
     let display = array.map(function (item) {
         return `
@@ -42,22 +43,22 @@ function basketDisplay(array) {
 
 function updateTotal(array) {
     let total = 0;
-    console.log(typeof (total));
+    //console.log(typeof (total));
     for (let i = 0; i < array.length; i++) {
         total = total + parseFloat(array[i].price);
     }
     total = total.toFixed(2);
-    console.log(total);
+    //console.log(total);
     totalDisplay.textContent = total;
 }
 
 function deleteItem(e) {
-    e.target.parentNode.parentNode.parentNode.remove();
+    e.target.parentNode.parentNode.remove();
     let num = getId(e.target.parentNode.parentNode.dataset.id);
-    console.log(num)
-    console.log(e.target.parentNode.parentNode.dataset.id)
+    //console.log(num)
+    //console.log(e.target.parentNode.parentNode.dataset.id)
     basketItems.splice(num, num);
-    console.log(basketItems);
+    //console.log(basketItems);
     updateTotal(basketItems);
 }
 
@@ -65,5 +66,15 @@ function getId(target) {
     for (let i = 0; i < basketItems.length; i++) {
         console.log(basketItems[i].id)
         if (target == basketItems[i].id) {}
+    }
+}
+
+function duplicateCheck(id) {
+    for (let i = 0; i < basketItems.length; i++) {
+        console.log(`I is${i}:` + basketItems[i].id);
+        if (basketItems[i].id == id) {
+            duplicatedItem = i;
+            duplicate = true;
+        }
     }
 }

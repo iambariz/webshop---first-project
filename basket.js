@@ -1,9 +1,7 @@
 const basketList = document.querySelector(".basketList");
 const totalDisplay = document.querySelector(".total-price-holder");
 
-const basketItems = [
-
-]
+const basketItems = []
 
 class Item {
     constructor(id, title, quantity, unitPrice) {
@@ -21,7 +19,7 @@ function basketDisplay(array) {
     let display = array.map(function (item) {
         return `
     <li class="basket-item">
-        <div class="basket-container" data-id="${item.id}>
+        <div class="basket-container" data-id="${item.id}">
             <p>
                 <span class="item-name">${item.title}</span>
                 <span class="times">(${item.quantity}x)</span>
@@ -53,25 +51,28 @@ function updateTotal(array) {
 }
 
 function deleteItem(e) {
-    e.target.parentNode.parentNode.remove();
-    let num = getId(e.target.parentNode.parentNode.dataset.id);
-    //console.log(num)
+    let num =
+        getId(e.target.parentElement.parentElement.dataset.id);
+    e.target.parentElement.parentElement.parentElement.remove();
     //console.log(e.target.parentNode.parentNode.dataset.id)
-    basketItems.splice(num, num);
+    console.log(`${num} value is `)
+    basketItems.splice(num, 1);
     //console.log(basketItems);
     updateTotal(basketItems);
 }
 
 function getId(target) {
     for (let i = 0; i < basketItems.length; i++) {
-        console.log(basketItems[i].id)
-        if (target == basketItems[i].id) {}
+        if (target == basketItems[i].id) {
+            console.log(i);
+            console.log(basketItems[i]);
+            return i;
+        }
     }
 }
 
 function duplicateCheck(id) {
     for (let i = 0; i < basketItems.length; i++) {
-        console.log(`I is${i}:` + basketItems[i].id);
         if (basketItems[i].id == id) {
             duplicatedItem = i;
             duplicate = true;

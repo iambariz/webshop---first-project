@@ -17,7 +17,8 @@ function displayItems(array) {
             <p class="test-name">${item.title}</p>
             <p class="price">
                 <span class="full-price">${item.price}</span>
-                <span class="unit-price secondary-info">£13.89/kg </span></p>
+                <span class="unit-price secondary-info"> £13.89/kg </span>
+            </p>
             <p class="purchase">
                 <input type="number" class="quantity" name="quantity" min="1" max="5">
                 <a class="btn btn-submit" href="#">Add</a>

@@ -54,4 +54,5 @@ function addItem(e) {
     console.log(quantity);
     //Display basket
     basketDisplay(basketItems);
+    updateTotal(basketItems);
 }

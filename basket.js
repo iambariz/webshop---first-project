@@ -1,15 +1,17 @@
 const basketList = document.querySelector(".basketList");
+const totalDisplay = document.querySelector(".total-price-holder");
 
 const basketItems = [
 
 ]
 
 class Item {
-    constructor(id, title, quantity, price) {
+    constructor(id, title, quantity, unitPrice) {
         this.title = title;
         this.id = id;
         this.quantity = quantity;
-        this.price = price;
+        this.unitPrice = unitPrice;
+        this.price = unitPrice * quantity;
     }
 }
 
@@ -31,8 +33,16 @@ function basketDisplay(array) {
     display = display.join("");
     basketList.innerHTML = display;
     let buttons = document.querySelectorAll('.fas.fa-times');
-    buttons.forEach(function (item) {
-        item.addEventListener('click', deleteItem);
-    })
+
     console.log(buttons);
+}
+
+function updateTotal(array) {
+    let total = 0;
+    for (let i = 0; i < array.length; i++) {
+        total = total + array[i].price;
+    }
+    total = total.toFixed(2);
+    totalDisplay.textContent = total + "£";
+    console.log(total);
 }

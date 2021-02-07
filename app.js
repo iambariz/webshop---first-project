@@ -42,16 +42,16 @@ function addItem(e) {
     let quantity = e.target.parentElement.childNodes[1].value;
     if (quantity > 0) {
         let newItem = new Item(id, items[id].title, quantity, items[id].price);
-        console.log(newItem);
+        //console.log(newItem);
         //console.log("Value test: " + quantity);
         basketItems.push(newItem);
-        console.log(basketItems);
+        //console.log(basketItems);
     } else {
         //error msg needed
         console.log("wrong");
     }
     //Set the quantity to 0 needed
-    console.log(quantity);
+    //console.log(quantity);
     //Display basket
     basketDisplay(basketItems);
     updateTotal(basketItems);

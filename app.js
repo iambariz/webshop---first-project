@@ -51,6 +51,7 @@ function addItem(e) {
         console.log("wrong");
     }
     //Set the quantity to 0 needed
-    console.log(quantity)
-    //Display sideitems needed
+    console.log(quantity);
+    //Display basket
+    basketDisplay(basketItems);
 }

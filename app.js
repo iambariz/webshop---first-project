@@ -20,7 +20,7 @@ function displayItems(array) {
                 <span class="unit-price secondary-info"> £13.89/kg </span>
             </p>
             <p class="purchase">
-                <input type="number" class="quantity" name="quantity" min="1" max="5">
+                <input type="number" class="quantity" name="quantity" min="1" max="5" placeholder="0">
                 <a class="btn btn-submit" href="#">Add</a>
             </p>
         </div>

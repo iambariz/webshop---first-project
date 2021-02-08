@@ -29,6 +29,14 @@ function displayItems(array) {
     });
     display = display.join("");
     section.innerHTML = display;
+    let quantity = document.querySelectorAll('.quantity');
+    quantity.forEach(function (item) {
+        item.addEventListener("keypress", function (evt) {
+            if (evt.which < 48 || evt.which > 57) {
+                evt.preventDefault();
+            }
+        });
+    })
     let buttons = document.querySelectorAll('.btn-submit');
     buttons.forEach(function (item) {
         item.addEventListener('click', addItem);
@@ -44,6 +52,7 @@ function addItem(e) {
     //console.log(element);
     let quantity = e.target.parentElement.childNodes[1].value;
     duplicateCheck(id);
+    // console.log(typeof (quantity));
     if (duplicate == false) {
         if (quantity > 0) {
             let newItem = new Item(id, items[id].title, quantity, items[id].price);
@@ -68,4 +77,5 @@ function addItem(e) {
     basketDisplay(basketItems);
     updateTotal(basketItems);
     //Set the quantity to 0 needed
+    e.target.parentElement.childNodes[1].value = '';
 }

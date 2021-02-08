@@ -55,7 +55,6 @@ function deleteItem(e) {
         getId(e.target.parentElement.parentElement.dataset.id);
     e.target.parentElement.parentElement.parentElement.remove();
     //console.log(e.target.parentNode.parentNode.dataset.id)
-    console.log(`${num} value is `)
     basketItems.splice(num, 1);
     //console.log(basketItems);
     updateTotal(basketItems);

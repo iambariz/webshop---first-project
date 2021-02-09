@@ -4,11 +4,14 @@ let isRunning = false;
 
 let startTime;
 let endTime;
+let timeLeft
 
 function getTimes() {
+    isRunning = true;
     startTime = new Date();
     startTime.getTime();
-    console.log(startTime);
+    endTime = new Date(startTime);
+    endtime = endTime.setMinutes(endTime.getMinutes() + 30);
 }
 
 getTimes();

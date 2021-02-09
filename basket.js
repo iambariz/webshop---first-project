@@ -63,8 +63,8 @@ function deleteItem(e) {
 function getId(target) {
     for (let i = 0; i < basketItems.length; i++) {
         if (target == basketItems[i].id) {
-            console.log(i);
-            console.log(basketItems[i]);
+            //console.log(i);
+            //console.log(basketItems[i]);
             return i;
         }
     }

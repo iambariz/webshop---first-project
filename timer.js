@@ -49,7 +49,7 @@ function displayTime(min, sec) {
 function myTimer() {
     if (isRunning == false) {
         isRunning = true;
-        displayTimer()
+        displayTimer();
         getTimes();
     } else {
 
@@ -82,6 +82,4 @@ function displayTimer() {
         timeDisplay.style.visibility = 'hidden';
         timeDisplay.style.opacity = '0';
     }
-
-
 }

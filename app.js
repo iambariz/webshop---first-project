@@ -7,7 +7,8 @@ let duplicatedItem;
 
 //Event listerners
 window.addEventListener("DOMContentLoaded", function () {
-    displayItems(items)
+    displayItems(items);
+    displayStorageItems();
 })
 
 //Display mechanism
@@ -65,10 +66,11 @@ function addItem(e) {
             }
             let newItem = new Item(id, items[id].title, quantity, items[id].price);
             //console.log(newItem);
-            //console.log("Value test: " + quantity);
-            basketItems.push(newItem);
+
+            //Add to storage
+            addToLocalStorage(newItem.id, newItem.title, newItem.quantity, items[id].price);
         } else {
-            //error msg needed
+            //error msg 
             //console.log("wrong");
         }
     }
@@ -83,7 +85,7 @@ function addItem(e) {
     //console.log(quantity);
     barDisplay();
     //Display basket
-    basketDisplay(basketItems);
+    displayStorageItems()
     updateTotal(basketItems);
     //Set the quantity to 0 needed
     e.target.parentElement.childNodes[1].value = '';

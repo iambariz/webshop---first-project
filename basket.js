@@ -1,8 +1,10 @@
+//Selectors
 const basketList = document.querySelector(".basketList");
 const totalDisplay = document.querySelector(".total-price-holder");
 
 const basketItems = []
 
+//Constructor
 class Item {
     constructor(id, title, quantity, unitPrice) {
         this.title = title;
@@ -14,7 +16,7 @@ class Item {
 
 }
 
-
+//Sidebar display
 function basketDisplay(array) {
     let display = array.map(function (item) {
         return `
@@ -39,6 +41,7 @@ function basketDisplay(array) {
     //console.log(buttons);
 }
 
+//Price display
 function updateTotal(array) {
     let total = 0;
     //console.log(typeof (total));
@@ -50,6 +53,7 @@ function updateTotal(array) {
     totalDisplay.textContent = total;
 }
 
+//Delete item, also remove from array
 function deleteItem(e) {
     let num =
         getId(e.target.parentElement.parentElement.dataset.id);
@@ -60,6 +64,7 @@ function deleteItem(e) {
     updateTotal(basketItems);
 }
 
+//Gathers array ID for delete
 function getId(target) {
     for (let i = 0; i < basketItems.length; i++) {
         if (target == basketItems[i].id) {
@@ -70,6 +75,7 @@ function getId(target) {
     }
 }
 
+//Duplicate check function
 function duplicateCheck(id) {
     for (let i = 0; i < basketItems.length; i++) {
         if (basketItems[i].id == id) {

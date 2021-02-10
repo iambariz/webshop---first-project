@@ -1,3 +1,4 @@
+//Old data, now using different methods
 /*
 class item{
   constructor(name, id, price, inStock, unit, type,) {

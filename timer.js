@@ -1,15 +1,17 @@
+//Selectors
 const secondDisplay = document.querySelector(".second");
 const minuteDisplay = document.querySelector(".minute");
 
-
+//Variables
 let isRunning = false;
-
 let startTime;
 let endTime;
 let timeLeft;
 let minutesLeft;
 let secondsLeft;
+let timer;
 
+//Get time values
 function getTimes() {
     startTime = new Date();
     endTime = new Date(startTime);
@@ -19,15 +21,15 @@ function getTimes() {
     getMS();
 }
 
+//Converting
 function getMS() {
     minutesLeft = Math.floor(timeLeft / 60000);
     secondsLeft = (timeLeft - (minutesLeft * 60000)) / 1000;
-    console.log(minutesLeft);
-    console.log(secondsLeft);
     displayTime(minutesLeft, secondsLeft);
     timeLeft = timeLeft - 1000;
 }
 
+//Display
 function displayTime(min, sec) {
     if (min < 10) {
         minuteDisplay.textContent = "0" + min;
@@ -41,8 +43,8 @@ function displayTime(min, sec) {
     }
 }
 
+//Function if time is up
 function myTimer() {
-    console.log("works");
     if (isRunning == false) {
         isRunning = true;
         getTimes();
@@ -54,8 +56,14 @@ function myTimer() {
     }
 }
 
-let timer = setInterval(myTimer, 1000);
+//Start & stop
+function stopTimer() {
+    clearInterval(timer);
+    isRunning = false;
+    minuteDisplay.textContent = "30";
+    secondDisplay.textContent = "00";
+}
 
-function stopTimer(func) {
-    clearInterval(func);
+function startTimer() {
+    timer = setInterval(myTimer, 1000);
 }

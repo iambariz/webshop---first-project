@@ -1,13 +1,16 @@
+//Selectors
 const section = document.querySelector(".item-row");
+
+//Variables
 let duplicate = false;
 let duplicatedItem;
 
+//Event listerners
 window.addEventListener("DOMContentLoaded", function () {
     displayItems(items)
 })
 
-
-//display
+//Display mechanism
 function displayItems(array) {
     let display = array.map(function (item) {
         return `
@@ -45,6 +48,7 @@ function displayItems(array) {
     //console.log(buttons)
 }
 
+//Adding items to the list & array
 function addItem(e) {
     let element = e.target.parentElement.parentElement.parentElement;
     let id = element.dataset.id;

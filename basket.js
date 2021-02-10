@@ -1,6 +1,7 @@
 //Selectors
 const basketList = document.querySelector(".basketList");
 const totalDisplay = document.querySelector(".total-price-holder");
+const sideBar = document.querySelector(".sidebar");
 
 const basketItems = []
 
@@ -37,7 +38,7 @@ function basketDisplay(array) {
     let buttons = document.querySelectorAll('.fas.fa-times');
     buttons.forEach(function (item) {
         item.addEventListener('click', deleteItem);
-    })
+    });
     //console.log(buttons);
 }
 
@@ -62,6 +63,8 @@ function deleteItem(e) {
     basketItems.splice(num, 1);
     //console.log(basketItems);
     updateTotal(basketItems);
+    barDisplay();
+
 }
 
 //Gathers array ID for delete
@@ -82,5 +85,13 @@ function duplicateCheck(id) {
             duplicatedItem = i;
             duplicate = true;
         }
+    }
+}
+
+function barDisplay() {
+    if (basketItems.length > 0) {
+        sideBar.style.right = "0px";
+    } else {
+        sideBar.style.right = "-350px";
     }
 }

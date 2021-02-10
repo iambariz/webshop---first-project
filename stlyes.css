@@ -182,13 +182,14 @@ input[type=number] {
 
 .sidebar{
     position: absolute;
-    right: 0;
+    right: -350px;
     top: 0;
     margin: 5rem 0;
     padding: 0rem 2rem 2rem 2rem;
     min-height: 75vh;
     background-color: var(--secondary-bg-color);
     color: #fff;
+    transition: 0.6s ease all;
 }
 
 .basket-header{

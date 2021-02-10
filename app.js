@@ -43,8 +43,10 @@ function displayItems(array) {
     let buttons = document.querySelectorAll('.btn-submit');
     buttons.forEach(function (item) {
         item.addEventListener('click', addItem);
+        item.addEventListener("click", function (event) {
+            event.preventDefault()
+        });
     })
-    //console.log("Works");
     //console.log(buttons)
 }
 
@@ -53,7 +55,6 @@ function addItem(e) {
     let element = e.target.parentElement.parentElement.parentElement;
     let id = element.dataset.id;
     //console.log(id)
-    //console.log(element);
     let quantity = e.target.parentElement.childNodes[1].value;
     duplicateCheck(id);
     // console.log(typeof (quantity));
@@ -63,20 +64,21 @@ function addItem(e) {
             //console.log(newItem);
             //console.log("Value test: " + quantity);
             basketItems.push(newItem);
-            //console.log(basketItems);
         } else {
             //error msg needed
             //console.log("wrong");
         }
     }
+    //Duplicate instead of puts as a new, updates quantity
     if (duplicate == true) {
         basketItems[duplicatedItem].quantity =
             parseInt(basketItems[duplicatedItem].quantity) + parseInt(quantity);
         basketItems[duplicatedItem].price =
             (basketItems[duplicatedItem].quantity * basketItems[duplicatedItem].unitPrice).toFixed(2)
     }
-    duplicate = false
+    duplicate = false;
     //console.log(quantity);
+    barDisplay();
     //Display basket
     basketDisplay(basketItems);
     updateTotal(basketItems);

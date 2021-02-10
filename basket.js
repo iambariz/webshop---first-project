@@ -64,7 +64,9 @@ function deleteItem(e) {
     //console.log(basketItems);
     updateTotal(basketItems);
     barDisplay();
-
+    if (basketItems.length == 0) {
+        stopTimer();
+    }
 }
 
 //Gathers array ID for delete

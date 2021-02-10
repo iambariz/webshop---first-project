@@ -60,6 +60,9 @@ function addItem(e) {
     // console.log(typeof (quantity));
     if (duplicate == false) {
         if (quantity > 0) {
+            if (isRunning == false) {
+                startTimer();
+            }
             let newItem = new Item(id, items[id].title, quantity, items[id].price);
             //console.log(newItem);
             //console.log("Value test: " + quantity);

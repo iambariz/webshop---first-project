@@ -1,6 +1,8 @@
 //Selectors
 const secondDisplay = document.querySelector(".second");
 const minuteDisplay = document.querySelector(".minute");
+const timeDisplay = document.querySelector(".time-bar");
+
 
 //Variables
 let isRunning = false;
@@ -47,7 +49,10 @@ function displayTime(min, sec) {
 function myTimer() {
     if (isRunning == false) {
         isRunning = true;
+        displayTimer()
         getTimes();
+    } else {
+
     }
     if (timeLeft > 0) {
         getMS()
@@ -60,10 +65,23 @@ function myTimer() {
 function stopTimer() {
     clearInterval(timer);
     isRunning = false;
+    displayTimer();
     minuteDisplay.textContent = "30";
     secondDisplay.textContent = "00";
 }
 
 function startTimer() {
     timer = setInterval(myTimer, 1000);
+}
+
+function displayTimer() {
+    if (isRunning == true) {
+        timeDisplay.style.visibility = 'visible';
+        timeDisplay.style.opacity = '1';
+    } else {
+        timeDisplay.style.visibility = 'hidden';
+        timeDisplay.style.opacity = '0';
+    }
+
+
 }

@@ -111,7 +111,7 @@ input[type=number] {
 .item-card-test{
     margin: 2rem 2rem;
     max-width: 23rem;
-    height: 40rem;
+    height: 35rem;
     border: 3px solid var(--secondary-bg-color);
     border-radius: 1rem;
     background-color: #fff;
@@ -135,7 +135,7 @@ input[type=number] {
     padding: 0.5rem 0;
 }
 .price{
-    margin-top: 8rem;
+    margin-top: 4rem;
     margin-bottom: 0.5rem;
 }
 
@@ -243,4 +243,7 @@ input[type=number] {
     display: flex;
     justify-content: center;
     align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.8s ease all;
 }

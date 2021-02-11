@@ -16,17 +16,23 @@ function addToLocalStorage(id, title, quantity, price) {
     storageItems.push(item);
     localStorage.setItem("list", JSON.stringify(storageItems));
 }
-
+/*
 function removeFromLocalStorage(id) {
     let storageItems = getLocalStorage();
-    console.log(typeof (id));
+    console.log(id);
     storageItems = storageItems.filter(function (item) {
-        if (parseInt(item.id) != parseInt(item.id)) {
+        console.log(item);
+        if (parseInt(id) != parseInt(item.id)) {
             return item;
+        } else {
+            console.log("else");
         }
     })
+    console.log(storageItems)
     localStorage.setItem("list", JSON.stringify(storageItems));
 }
+*/
+
 
 function displayStorageItems() {
     let storageItems = getLocalStorage();

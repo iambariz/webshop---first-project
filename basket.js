@@ -56,12 +56,24 @@ function updateTotal(array) {
 
 //Delete item, also remove from array
 function deleteItem(e) {
-    let num =
-        getId(e.target.parentElement.parentElement.dataset.id);
+    let num = e.target.parentElement.parentElement.dataset.id;
     e.target.parentElement.parentElement.parentElement.remove();
     //console.log(e.target.parentNode.parentNode.dataset.id)
-    removeFromLocalStorage(num);
+    let storageItems = getLocalStorage();
+    console.log(num);
+    //removeFromLocalStorage(num);
     getLocalStorage().splice(num, 1);
+    localStorage.setItem("list", JSON.stringify(storageItems));
+    storageItems = storageItems.filter(function (item) {
+        console.log(item);
+        if (parseInt(num) != parseInt(item.id)) {
+            return item;
+        } else {
+            console.log("else");
+        }
+    })
+    console.log(storageItems)
+    localStorage.setItem("list", JSON.stringify(storageItems));
     //console.log(basketItems);
     updateTotal(getLocalStorage());
     barDisplay();

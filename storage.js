@@ -1,3 +1,5 @@
+//Storage items
+
 function getLocalStorage() {
     return localStorage.getItem("list") ?
         JSON.parse(localStorage.getItem('list')) : [];
@@ -28,15 +30,16 @@ function removeFromLocalStorage(id) {
 
 function displayStorageItems() {
     let storageItems = getLocalStorage();
-    if (storageItems.length > 0) {
-        storageItems.forEach(function (item) {
-            basketItems.push(item);
-        });
-        basketDisplay(storageItems);
-        barDisplay();
-        updateTotal(basketItems);
-    }
+    basketDisplay(storageItems);
+    barDisplay();
+    updateTotal(basketItems);
 }
+
+
+
+
+//Storage time
+
 
 function getTimeStorage() {
     return localStorage.getItem("timeData") ?
@@ -57,18 +60,20 @@ function saveTime(startTime, endTime) {
 function loadTimer() {
     let timeStorage = getTimeStorage();
     timeLeft = parseInt(timeStorage[0].endTime) - parseInt(timeStorage[0].startTime);
-    //  console.log(timeStorage[0].endTime);
+    console.log(`The timeleft is:${timeLeft}`);
 }
 
 
 function startStorageTime() {
     let timeStorage = getTimeStorage();
     if (timeStorage.length < 1) {
-        startTimer();
+
     } else {
         loadTimer();
     }
 }
+
+
 /*
 If current time is greater then the end time delete
 function deleteTime() {

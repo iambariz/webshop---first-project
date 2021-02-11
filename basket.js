@@ -61,19 +61,19 @@ function deleteItem(e) {
     e.target.parentElement.parentElement.parentElement.remove();
     //console.log(e.target.parentNode.parentNode.dataset.id)
     removeFromLocalStorage(num);
-    basketItems.splice(num, 1);
+    getLocalStorage().splice(num, 1);
     //console.log(basketItems);
-    updateTotal(basketItems);
+    updateTotal(getLocalStorage());
     barDisplay();
-    if (basketItems.length == 0) {
+    if (getLocalStorage().length == 0) {
         stopTimer();
     }
 }
 
 //Gathers array ID for delete
 function getId(target) {
-    for (let i = 0; i < basketItems.length; i++) {
-        if (target == basketItems[i].id) {
+    for (let i = 0; i < getLocalStorage().length; i++) {
+        if (target == getLocalStorage()[i].id) {
             //console.log(i);
             //console.log(basketItems[i]);
             return i;
@@ -83,8 +83,8 @@ function getId(target) {
 
 //Duplicate check function
 function duplicateCheck(id) {
-    for (let i = 0; i < basketItems.length; i++) {
-        if (basketItems[i].id == id) {
+    for (let i = 0; i < getLocalStorage().length; i++) {
+        if (getLocalStorage()[i].id == id) {
             duplicatedItem = i;
             duplicate = true;
         }
@@ -92,7 +92,7 @@ function duplicateCheck(id) {
 }
 
 function barDisplay() {
-    if (basketItems.length > 0) {
+    if (getLocalStorage().length > 0) {
         sideBar.style.right = "0px";
     } else {
         sideBar.style.right = "-350px";

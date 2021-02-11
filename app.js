@@ -9,6 +9,8 @@ let duplicatedItem;
 window.addEventListener("DOMContentLoaded", function () {
     displayItems(items);
     displayStorageItems();
+    startStorageTime();
+    updateTotal(getLocalStorage());
 })
 
 //Display mechanism
@@ -65,6 +67,7 @@ function addItem(e) {
                 startTimer();
             }
             let newItem = new Item(id, items[id].title, quantity, items[id].price);
+            console.log(newItem);
             //Add to storage
             addToLocalStorage(newItem.id, newItem.title, newItem.quantity, items[id].price);
         } else {
@@ -74,17 +77,17 @@ function addItem(e) {
     }
     //Duplicate instead of puts as a new, updates quantity
     if (duplicate == true) {
-        basketItems[duplicatedItem].quantity =
-            parseInt(basketItems[duplicatedItem].quantity) + parseInt(quantity);
-        basketItems[duplicatedItem].price =
-            (basketItems[duplicatedItem].quantity * basketItems[duplicatedItem].unitPrice).toFixed(2)
+        getLocalStorage()[duplicatedItem].quantity =
+            parseInt(getLocalStorage()[duplicatedItem].quantity) + parseInt(quantity);
+        getLocalStorage()[duplicatedItem].price =
+            (getLocalStorage()[duplicatedItem].quantity * getLocalStorage()[duplicatedItem].unitPrice).toFixed(2)
     }
     duplicate = false;
     //console.log(quantity);
     barDisplay();
     //Display basket
-    displayStorageItems()
-    updateTotal(basketItems);
+    displayStorageItems();
+    updateTotal(getLocalStorage());
     //Set the quantity to 0 needed
     e.target.parentElement.childNodes[1].value = '';
 }

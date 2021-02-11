@@ -5,12 +5,11 @@ function getLocalStorage() {
 
 function addToLocalStorage(id, title, quantity, price) {
     const item = {
-        title,
+        id,
         title,
         quantity,
         price,
     }
-    console.log(item);
     let storageItems = getLocalStorage();
     storageItems.push(item);
     localStorage.setItem("list", JSON.stringify(storageItems));
@@ -28,7 +27,6 @@ function removeFromLocalStorage(id) {
 
 function displayStorageItems() {
     let storageItems = getLocalStorage();
-    console.log(items[0].id, items[0].value)
     if (storageItems.length > 0) {
         storageItems.forEach(function (item) {
             basketItems.push(item);
@@ -38,3 +36,41 @@ function displayStorageItems() {
         updateTotal(basketItems);
     }
 }
+
+function getTimeStorage() {
+    return localStorage.getItem("timeData") ?
+        JSON.parse(localStorage.getItem('timeData')) : [];
+}
+
+function saveTime(startTime, endTime) {
+    const time = {
+        startTime,
+        endTime,
+    }
+    let timeStorage = getTimeStorage();
+    timeStorage.push(time);
+    console.log(timeStorage);
+    localStorage.setItem("timeData", JSON.stringify(timeStorage));
+}
+
+function loadTimer() {
+    let timeStorage = getTimeStorage();
+    timeLeft = timeStorage[0].endTime - timeStorage[0].startTime;
+}
+
+
+function startStorageTime() {
+    let timeStorage = getTimeStorage();
+    if (timeStorage.length < 1) {
+        startTimer();
+    } else {
+        loadTimer();
+    }
+}
+/*
+If current time is greater then the end time delete
+function deleteTime() {
+
+}
+
+*/

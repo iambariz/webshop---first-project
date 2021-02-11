@@ -9,6 +9,7 @@ let duplicatedItem;
 window.addEventListener("DOMContentLoaded", function () {
     displayItems(items);
     displayStorageItems();
+    startStorageTime();
 })
 
 //Display mechanism

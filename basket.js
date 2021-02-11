@@ -59,8 +59,8 @@ function deleteItem(e) {
     let num =
         getId(e.target.parentElement.parentElement.dataset.id);
     e.target.parentElement.parentElement.parentElement.remove();
-    removeFromLocalStorage(num);
     //console.log(e.target.parentNode.parentNode.dataset.id)
+    removeFromLocalStorage(num);
     basketItems.splice(num, 1);
     //console.log(basketItems);
     updateTotal(basketItems);

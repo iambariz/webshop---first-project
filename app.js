@@ -9,7 +9,6 @@ let duplicatedItem;
 window.addEventListener("DOMContentLoaded", function () {
     displayItems(items);
     displayStorageItems();
-    startStorageTime();
 })
 
 //Display mechanism
@@ -66,8 +65,6 @@ function addItem(e) {
                 startTimer();
             }
             let newItem = new Item(id, items[id].title, quantity, items[id].price);
-            //console.log(newItem);
-
             //Add to storage
             addToLocalStorage(newItem.id, newItem.title, newItem.quantity, items[id].price);
         } else {

@@ -20,7 +20,7 @@ function getTimes() {
     endTime.setMinutes(startTime.getMinutes() + 30);
     startTime.getTime();
     timeLeft = endTime.getTime() - startTime.getTime();
-    saveTime(startTime, endTime);
+    saveTime(startTime.getTime(), endTime.getTime());
     getMS();
 }
 

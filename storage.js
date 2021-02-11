@@ -17,8 +17,9 @@ function addToLocalStorage(id, title, quantity, price) {
 
 function removeFromLocalStorage(id) {
     let storageItems = getLocalStorage();
+    console.log(typeof (id));
     storageItems = storageItems.filter(function (item) {
-        if (item.id !== id) {
+        if (parseInt(item.id) != parseInt(item.id)) {
             return item;
         }
     })
@@ -49,13 +50,14 @@ function saveTime(startTime, endTime) {
     }
     let timeStorage = getTimeStorage();
     timeStorage.push(time);
-    console.log(timeStorage);
+    //   console.log(timeStorage);
     localStorage.setItem("timeData", JSON.stringify(timeStorage));
 }
 
 function loadTimer() {
     let timeStorage = getTimeStorage();
-    timeLeft = timeStorage[0].endTime - timeStorage[0].startTime;
+    timeLeft = parseInt(timeStorage[0].endTime) - parseInt(timeStorage[0].startTime);
+    //  console.log(timeStorage[0].endTime);
 }
 
 

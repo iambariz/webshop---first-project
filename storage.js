@@ -16,23 +16,6 @@ function addToLocalStorage(id, title, quantity, price) {
     storageItems.push(item);
     localStorage.setItem("list", JSON.stringify(storageItems));
 }
-/*
-function removeFromLocalStorage(id) {
-    let storageItems = getLocalStorage();
-    console.log(id);
-    storageItems = storageItems.filter(function (item) {
-        console.log(item);
-        if (parseInt(id) != parseInt(item.id)) {
-            return item;
-        } else {
-            console.log("else");
-        }
-    })
-    console.log(storageItems)
-    localStorage.setItem("list", JSON.stringify(storageItems));
-}
-*/
-
 
 function displayStorageItems() {
     let storageItems = getLocalStorage();
@@ -45,7 +28,6 @@ function displayStorageItems() {
 
 
 //Storage time
-
 
 function getTimeStorage() {
     return localStorage.getItem("timeData") ?
@@ -81,9 +63,22 @@ function startStorageTime() {
 
 
 /*
-If current time is greater then the end time delete
-function deleteTime() {
+Old functions
+*/
 
+/*
+function removeFromLocalStorage(id) {
+    let storageItems = getLocalStorage();
+    console.log(id);
+    storageItems = storageItems.filter(function (item) {
+        console.log(item);
+        if (parseInt(id) != parseInt(item.id)) {
+            return item;
+        } else {
+            console.log("else");
+        }
+    })
+    console.log(storageItems)
+    localStorage.setItem("list", JSON.stringify(storageItems));
 }
-
 */

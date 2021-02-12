@@ -39,18 +39,15 @@ function basketDisplay(array) {
     buttons.forEach(function (item) {
         item.addEventListener('click', deleteItem);
     });
-    //console.log(buttons);
 }
 
 //Price display
 function updateTotal(array) {
     let total = 0;
-    //console.log(typeof (total));
     for (let i = 0; i < array.length; i++) {
         total = total + parseFloat(array[i].price);
     }
     total = total.toFixed(2);
-    //console.log(total);
     totalDisplay.textContent = total;
 }
 
@@ -74,7 +71,6 @@ function deleteItem(e) {
     })
     console.log(storageItems)
     localStorage.setItem("list", JSON.stringify(storageItems));
-    //console.log(basketItems);
     updateTotal(getLocalStorage());
     barDisplay();
     if (getLocalStorage().length == 0) {
@@ -86,8 +82,6 @@ function deleteItem(e) {
 function getId(target) {
     for (let i = 0; i < getLocalStorage().length; i++) {
         if (target == getLocalStorage()[i].id) {
-            //console.log(i);
-            //console.log(basketItems[i]);
             return i;
         }
     }

@@ -28,7 +28,8 @@ function getTimes() {
 function getMS() {
     minutesLeft = Math.floor(timeLeft / 60000);
     secondsLeft = (timeLeft - (minutesLeft * 60000)) / 1000;
-    displayTime(minutesLeft, secondsLeft);
+
+    displayTime(minutesLeft, Math.floor(secondsLeft));
     timeLeft = timeLeft - 1000;
 }
 

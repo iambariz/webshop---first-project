@@ -38,24 +38,35 @@ function saveTime(startTime, endTime) {
     const time = {
         startTime,
         endTime,
+        timeLeft,
     }
     let timeStorage = getTimeStorage();
     timeStorage.push(time);
     //   console.log(timeStorage);
     localStorage.setItem("timeData", JSON.stringify(timeStorage));
 }
-
+//If statement checks if the new start time is greater than the previous
+//end needs to be added
 function loadTimer() {
     let timeStorage = getTimeStorage();
-    timeLeft = parseInt(timeStorage[0].endTime) - parseInt(timeStorage[0].startTime);
-    console.log(`The timeleft is:${timeLeft}`);
+    startTime = new Date().getTime();
+    console.log(startTime)
+    timeLeft = parseInt(timeStorage[0].endTime) - parseInt(startTime);
+    timeLeft = Math.floor(timeLeft);
+    console.log(`The timeleft is: ${timeLeft}`);
+    isRunning = true;
+    startTimer();
+    setTimeout(function () {
+        displayTimer();
+    }, 1000);
+
 }
 
 
 function startStorageTime() {
     let timeStorage = getTimeStorage();
     if (timeStorage.length < 1) {
-
+        console.log("empty")
     } else {
         loadTimer();
     }

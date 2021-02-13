@@ -51,6 +51,46 @@ function updateTotal(array) {
     totalDisplay.textContent = total;
 }
 
+
+//Adding items to the storage
+function addItem(e) {
+    let element = e.target.parentElement.parentElement.parentElement;
+    let id = element.dataset.id;
+    //console.log(id)
+    let quantity = e.target.parentElement.childNodes[1].value;
+    duplicateCheck(id);
+    // console.log(typeof (quantity));
+    if (duplicate == false) {
+        if (quantity > 0) {
+            if (isRunning == false) {
+                startTimer();
+            }
+            let newItem = new Item(id, items[id].title, quantity, items[id].price);
+            //      console.log(newItem);
+            //Add to storage
+            addToLocalStorage(newItem.id, newItem.title, newItem.quantity, items[id].price);
+        } else {
+            //error msg 
+            //console.log("wrong");
+        }
+    }
+    //Duplicate instead of puts as a new, updates quantity
+    if (duplicate == true) {
+        getLocalStorage()[duplicatedItem].quantity =
+            parseInt(getLocalStorage()[duplicatedItem].quantity) + parseInt(quantity);
+        getLocalStorage()[duplicatedItem].price =
+            (getLocalStorage()[duplicatedItem].quantity * getLocalStorage()[duplicatedItem].unitPrice).toFixed(2)
+    }
+    duplicate = false;
+    //console.log(quantity);
+    barDisplay();
+    //Display basket
+    displayStorageItems();
+    updateTotal(getLocalStorage());
+    //Set the quantity to 0 needed
+    e.target.parentElement.childNodes[1].value = '';
+}
+
 //Delete item, also remove from array
 function deleteItem(e) {
     let num = e.target.parentElement.parentElement.dataset.id;

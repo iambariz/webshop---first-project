@@ -53,12 +53,18 @@ function loadTimer() {
     console.log(startTime)
     timeLeft = parseInt(timeStorage[0].endTime) - parseInt(startTime);
     timeLeft = Math.floor(timeLeft);
-    console.log(`The timeleft is: ${timeLeft}`);
-    isRunning = true;
-    startTimer();
-    setTimeout(function () {
-        displayTimer();
-    }, 1000);
+    if (timeLeft > 0) {
+        console.log(`The timeleft is: ${timeLeft}`);
+        isRunning = true;
+        startTimer();
+        setTimeout(function () {
+            displayTimer();
+        }, 1000);
+    } else {
+        localStorage.clear();
+
+        window.location.reload();
+    }
 
 }
 
@@ -66,10 +72,14 @@ function loadTimer() {
 function startStorageTime() {
     let timeStorage = getTimeStorage();
     if (timeStorage.length < 1) {
-        console.log("empty")
+        console.log("empty");
     } else {
         loadTimer();
     }
+}
+
+function deleteBasket() {
+    localStorage.clear();
 }
 
 

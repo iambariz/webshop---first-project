@@ -60,6 +60,7 @@ function myTimer() {
         getMS()
     } else {
         stopTimer();
+        localStorage.clear();
     }
 }
 

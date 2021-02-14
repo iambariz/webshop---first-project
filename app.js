@@ -52,3 +52,7 @@ function displayItems(array) {
     })
     //console.log(buttons)
 }
+
+function errorMsg() {
+    doc
+}

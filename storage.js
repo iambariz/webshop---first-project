@@ -61,9 +61,7 @@ function loadTimer() {
             displayTimer();
         }, 1000);
     } else {
-        localStorage.clear();
-
-        window.location.reload();
+        errorMsg();
     }
 
 }

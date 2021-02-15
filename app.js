@@ -53,6 +53,25 @@ function displayItems(array) {
     //console.log(buttons)
 }
 
+
+//Creates the error msg container
 function errorMsg() {
-    doc
+    const sessionContainer = document.createElement("div");
+    sessionContainer.classList.add("session-msg");
+    const msgContainer = document.createElement("div");
+    msgContainer.classList.add("msg-container");
+    const paragraph = document.createElement("p");
+    const btn = document.createElement("a");
+    btn.classList = "btn btn-submit btn-session";
+    btn.addEventListener('click', function () {
+        localStorage.clear();
+        window.location.reload();
+    })
+    paragraph.textContent = "Your session has expired!";
+    btn.textContent = "Okay";
+    msgContainer.appendChild(paragraph);
+    msgContainer.appendChild(btn);
+    sessionContainer.appendChild(msgContainer);
+
+    document.body.appendChild(sessionContainer);
 }

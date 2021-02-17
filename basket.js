@@ -65,10 +65,10 @@ function addItem(e) {
             if (isRunning == false) {
                 startTimer();
             }
-            let newItem = new Item(id, items[id].title, quantity, items[id].price);
+            let newItem = new Item(id, items[0][id].title, quantity, items[0][id].price);
             //      console.log(newItem);
             //Add to storage
-            addToLocalStorage(newItem.id, newItem.title, newItem.quantity, items[id].price);
+            addToLocalStorage(newItem.id, newItem.title, newItem.quantity, items[0][id].price);
         } else {
             //error msg 
             //console.log("wrong");

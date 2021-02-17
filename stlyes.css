@@ -36,6 +36,10 @@ body{
     overflow-x: hidden;
 }
 
+main{
+    height: 100%;
+}
+
 img{
     max-width: 100%;
 }
@@ -91,9 +95,13 @@ input[type=number] {
 
 .item-container{
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
+    min-width: 20rem;
+    margin: 0 auto;
     margin-top: 4rem;
+    max-width: 125rem;
 }
 
 .item-row{
@@ -102,7 +110,6 @@ input[type=number] {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 0rem 15rem;
 }
 
 
@@ -233,7 +240,9 @@ input[type=number] {
 
 .time-bar{
     color: #fff;
-    position: sticky;
+    position: absolute;
+    height: auto;
+    width: 100%;
     bottom: 0;
     left: 0;
     height: 4rem;
@@ -290,4 +299,37 @@ input[type=number] {
     border-radius: 3rem;
     padding: 1.25rem 2.5rem;
     margin: 2rem auto;
+}
+
+.arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1024;
+    font-size: 4rem;
+    color: var(--secondary-bg-color);
+    cursor: pointer;
+}
+
+.fas.fa-chevron-right{
+    right: 0;
+}
+
+.fas.fa-chevron-left{
+    left: 0;
+}
+
+.fas.fa-chevron-down{
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(25%); 
+    cursor: pointer;
+    rotate: 180deg;
+    font-size: 4rem;
+    padding: 0.25rem 0.5rem;
+    border: 3px solid var(--secondary-bg-color);
+    border-radius:50%;
+    color: var(--secondary-bg-color);
+    background-color: #fff;
 }

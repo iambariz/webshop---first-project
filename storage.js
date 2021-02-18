@@ -70,7 +70,7 @@ function loadTimer() {
 function startStorageTime() {
     let timeStorage = getTimeStorage();
     if (timeStorage.length < 1) {
-        console.log("empty");
+        //  console.log("empty");
     } else {
         loadTimer();
     }

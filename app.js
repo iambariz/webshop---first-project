@@ -1,5 +1,7 @@
 //Selectors
 const section = document.querySelector(".item-row");
+const leftArrow = document.querySelector(".fas.fa-chevron-left");
+const rightArrow = document.querySelector(".fas.fa-chevron-right");
 
 //Variables
 let duplicate = false;

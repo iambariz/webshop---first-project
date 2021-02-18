@@ -2,6 +2,7 @@
 const basketList = document.querySelector(".basketList");
 const totalDisplay = document.querySelector(".total-price-holder");
 const sideBar = document.querySelector(".sidebar");
+const collapse = document.querySelector(".fa-chevron-circle-up");
 
 const basketItems = []
 
@@ -144,3 +145,7 @@ function barDisplay() {
         sideBar.style.right = "-350px";
     }
 }
+
+collapse.addEventListener('click', function () {
+    sideBar.style.transform = "scaleY(0)"
+})

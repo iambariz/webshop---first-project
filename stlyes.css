@@ -196,7 +196,9 @@ input[type=number] {
     min-height: 75vh;
     background-color: var(--secondary-bg-color);
     color: #fff;
-    transition: 0.6s ease all;
+    transform-origin: top;  
+    transform-style: flat;  
+    transition: 0.3s ease all;
 }
 
 .basket-header{
@@ -319,17 +321,11 @@ input[type=number] {
     left: 0;
 }
 
-.fas.fa-chevron-down{
+.fa-chevron-circle-up{
     position: absolute;
-    bottom: -2rem;
+    bottom: 2rem;
     left: 50%;
-    transform: translateX(25%); 
-    cursor: pointer;
-    rotate: 180deg;
     font-size: 4rem;
-    padding: 0.25rem 0.5rem;
-    border: 3px solid var(--secondary-bg-color);
-    border-radius:50%;
-    color: var(--secondary-bg-color);
-    background-color: #fff;
+    transform: translateX(-50%);
+    cursor: pointer;
 }

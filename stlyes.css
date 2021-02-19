@@ -198,7 +198,7 @@ input[type=number] {
     color: #fff;
     transform-origin: top;  
     transform-style: flat;  
-    transition: 0.3s ease all;
+    transition: 0.7s ease all;
 }
 
 .basket-header{
@@ -321,7 +321,7 @@ input[type=number] {
     left: 0;
 }
 
-.fa-chevron-circle-up{
+.fa-chevron-circle-right{
     position: absolute;
     bottom: 2rem;
     left: 50%;
@@ -329,3 +329,18 @@ input[type=number] {
     transform: translateX(-50%);
     cursor: pointer;
 }
+
+.fa-chevron-circle-left{
+    position: fixed;
+    color: var(--secondary-bg-color);
+    bottom: 50%;
+    right: 0;
+    font-size: 5rem;
+    cursor: pointer;
+    animation: leftRight 1.2s linear infinite alternate-reverse;
+}
+
+@keyframes leftRight {
+    0%   {transform: translateX(30%);}
+    100% {transform: translateX(15%);}
+  }

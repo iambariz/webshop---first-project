@@ -2,7 +2,8 @@
 const basketList = document.querySelector(".basketList");
 const totalDisplay = document.querySelector(".total-price-holder");
 const sideBar = document.querySelector(".sidebar");
-const collapse = document.querySelector(".fa-chevron-circle-up");
+const collapse = document.querySelector(".fa-chevron-circle-right");
+const open = document.querySelector(".fa-chevron-circle-left");
 
 const basketItems = []
 
@@ -147,5 +148,9 @@ function barDisplay() {
 }
 
 collapse.addEventListener('click', function () {
-    sideBar.style.transform = "scaleY(0)"
+    sideBar.style.right = "-350px";
+})
+
+open.addEventListener('click', function () {
+    sideBar.style.right = "0px";
 })

@@ -344,3 +344,17 @@ input[type=number] {
     0%   {transform: translateX(30%);}
     100% {transform: translateX(15%);}
   }
+
+
+.pages{
+    display: flex;
+    list-style: none;
+}
+
+.pages li{
+    color: var(--secondary-bg-color);
+    font-size: 2rem;
+    padding: 2rem;
+    cursor: pointer;
+    font-weight: 700;
+}

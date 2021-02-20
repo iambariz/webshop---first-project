@@ -2,6 +2,7 @@
 const section = document.querySelector(".item-row");
 const leftArrow = document.querySelector(".fas.fa-chevron-left");
 const rightArrow = document.querySelector(".fas.fa-chevron-right");
+const pages = document.querySelector(".pages");
 
 //Variables
 let duplicate = false;
@@ -13,6 +14,7 @@ window.addEventListener("DOMContentLoaded", function () {
     displayStorageItems();
     startStorageTime();
     updateTotal(getLocalStorage());
+    showPages();
 })
 
 //Display mechanism
@@ -76,4 +78,18 @@ function errorMsg() {
     sessionContainer.appendChild(msgContainer);
 
     document.body.appendChild(sessionContainer);
+}
+
+function showPages() {
+    for (let i = 0; i < items.length; i++) {
+        let current = i;
+        const pageBtn = document.createElement("li");
+        pageBtn.textContent = current + 1;
+        pageBtn.addEventListener('click', function () {
+            displayItems(items[current]);
+        });
+        pages.appendChild(pageBtn);
+
+
+    }
 }

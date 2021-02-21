@@ -5,6 +5,7 @@ const rightArrow = document.querySelector(".fas.fa-chevron-right");
 const pages = document.querySelector(".pages");
 
 //Variables
+let currentPage = 0;
 let duplicate = false;
 let duplicatedItem;
 
@@ -15,6 +16,30 @@ window.addEventListener("DOMContentLoaded", function () {
     startStorageTime();
     updateTotal(getLocalStorage());
     showPages();
+})
+
+rightArrow.addEventListener('click', function () {
+    currentPage++;
+    if (currentPage >= items.length) {
+        currentPage = 0
+        displayItems(items[currentPage]);
+    } else {
+        displayItems(items[currentPage]);
+    }
+})
+
+leftArrow.addEventListener('click', function () {
+    console.log(currentPage)
+    currentPage--;
+    console.log(currentPage)
+    if (currentPage == -1) {
+        currentPage = 4;
+        console.log(currentPage);
+        displayItems(items[currentPage]);
+    } else {
+        displayItems(items[currentPage]);
+
+    }
 })
 
 //Display mechanism
@@ -76,7 +101,6 @@ function errorMsg() {
     msgContainer.appendChild(paragraph);
     msgContainer.appendChild(btn);
     sessionContainer.appendChild(msgContainer);
-
     document.body.appendChild(sessionContainer);
 }
 
@@ -87,9 +111,9 @@ function showPages() {
         pageBtn.textContent = current + 1;
         pageBtn.addEventListener('click', function () {
             displayItems(items[current]);
+            let buttonValue = current;
+            currentPage = buttonValue;
         });
         pages.appendChild(pageBtn);
-
-
     }
 }

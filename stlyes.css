@@ -353,8 +353,13 @@ input[type=number] {
 
 .pages li{
     color: var(--secondary-bg-color);
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding: 2rem;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 900;
+    transition: 0.8 ease all;
+}
+
+.pages li:hover{
+    color:  #006786 ;
 }

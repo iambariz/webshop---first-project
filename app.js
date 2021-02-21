@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", function () {
     startStorageTime();
     updateTotal(getLocalStorage());
     showPages();
+    checkActive();
 })
 
 rightArrow.addEventListener('click', function () {
@@ -26,6 +27,7 @@ rightArrow.addEventListener('click', function () {
     } else {
         displayItems(items[currentPage]);
     }
+    checkActive()
 })
 
 leftArrow.addEventListener('click', function () {
@@ -38,8 +40,8 @@ leftArrow.addEventListener('click', function () {
         displayItems(items[currentPage]);
     } else {
         displayItems(items[currentPage]);
-
     }
+    checkActive()
 })
 
 //Display mechanism
@@ -113,7 +115,21 @@ function showPages() {
             displayItems(items[current]);
             let buttonValue = current;
             currentPage = buttonValue;
+            checkActive();
         });
         pages.appendChild(pageBtn);
+
+    }
+}
+
+function checkActive() {
+    for (let i = 0; i < pages.children.length; i++) {
+        if (i == currentPage) {
+            pages.children[i].classList.add('active');
+            console.log("works")
+        } else {
+            console.log("no");
+            pages.children[i].classList.remove('active');
+        }
     }
 }

@@ -100,7 +100,6 @@ input[type=number] {
     align-items: center;
     min-width: 20rem;
     margin: 0 auto;
-    margin-top: 4rem;
     max-width: 125rem;
 }
 
@@ -191,7 +190,6 @@ input[type=number] {
     position: absolute;
     right: -350px;
     top: 0;
-    margin: 5rem 0;
     padding: 0rem 2rem 2rem 2rem;
     min-height: 75vh;
     background-color: var(--secondary-bg-color);
@@ -306,7 +304,7 @@ input[type=number] {
 .arrow{
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-150%);
     z-index: 1024;
     font-size: 4rem;
     color: var(--secondary-bg-color);
@@ -349,17 +347,23 @@ input[type=number] {
 .pages{
     display: flex;
     list-style: none;
+    padding: 1rem;
 }
 
 .pages li{
     color: var(--secondary-bg-color);
     font-size: 2.5rem;
-    padding: 2rem;
+    padding: 0rem 2rem;
     cursor: pointer;
     font-weight: 900;
     transition: 0.8 ease all;
+    padding-bottom: 5rem;
 }
 
 .pages li:hover{
     color:  #006786 ;
+}
+
+.pages li.active{
+    color:  #0084ac ;
 }

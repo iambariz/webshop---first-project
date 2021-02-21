@@ -5,12 +5,13 @@ function getLocalStorage() {
         JSON.parse(localStorage.getItem('list')) : [];
 }
 
-function addToLocalStorage(id, title, quantity, price) {
+function addToLocalStorage(id, title, quantity, price, unitPrice) {
     const item = {
         id,
         title,
         quantity,
         price,
+        unitPrice
     }
     let storageItems = getLocalStorage();
     storageItems.push(item);

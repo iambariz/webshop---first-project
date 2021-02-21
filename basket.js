@@ -67,10 +67,9 @@ function addItem(e) {
             if (isRunning == false) {
                 startTimer();
             }
-            let newItem = new Item(id, items[0][id].title, quantity, items[0][id].price);
-            //      console.log(newItem);
+            let newItem = new Item(id, items[currentPage][id].title, quantity, items[currentPage][id].price, items[currentPage][id].price);
             //Add to storage
-            addToLocalStorage(newItem.id, newItem.title, newItem.quantity, items[0][id].price);
+            addToLocalStorage(newItem.id, newItem.title, newItem.quantity, items[currentPage][id].price, items[currentPage][id].price);
         } else {
             //error msg 
             //console.log("wrong");
@@ -83,8 +82,7 @@ function addItem(e) {
         storageItems[duplicatedItem].quantity =
             parseInt(storageItems[duplicatedItem].quantity) + parseInt(quantity);
         storageItems[duplicatedItem].price =
-            (parseInt(storageItems[duplicatedItem].quantity) * parseInt(storageItems[duplicatedItem].unitPrice)).toFixed(2);
-        console.log(typeof (storageItems[duplicatedItem.price]));
+            (parseInt(storageItems[duplicatedItem].quantity) * parseInt(storageItems[duplicatedItem].unitPrice))
         localStorage.setItem("list", JSON.stringify(storageItems));
 
     }
@@ -104,7 +102,6 @@ function deleteItem(e) {
     e.target.parentElement.parentElement.parentElement.remove();
     //console.log(e.target.parentNode.parentNode.dataset.id)
     let storageItems = getLocalStorage();
-    console.log(num);
     //removeFromLocalStorage(num);
     getLocalStorage().splice(num, 1);
     localStorage.setItem("list", JSON.stringify(storageItems));

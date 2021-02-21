@@ -126,9 +126,7 @@ function checkActive() {
     for (let i = 0; i < pages.children.length; i++) {
         if (i == currentPage) {
             pages.children[i].classList.add('active');
-            console.log("works")
         } else {
-            console.log("no");
             pages.children[i].classList.remove('active');
         }
     }

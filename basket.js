@@ -78,10 +78,15 @@ function addItem(e) {
     }
     //Duplicate instead of puts as a new, updates quantity
     if (duplicate == true) {
-        getLocalStorage()[duplicatedItem].quantity =
-            parseInt(getLocalStorage()[duplicatedItem].quantity) + parseInt(quantity);
-        getLocalStorage()[duplicatedItem].price =
-            (getLocalStorage()[duplicatedItem].quantity * getLocalStorage()[duplicatedItem].unitPrice).toFixed(2)
+        let storageItems = getLocalStorage();
+        console.log(storageItems[duplicatedItem]);
+        storageItems[duplicatedItem].quantity =
+            parseInt(storageItems[duplicatedItem].quantity) + parseInt(quantity);
+        storageItems[duplicatedItem].price =
+            (parseInt(storageItems[duplicatedItem].quantity) * parseInt(storageItems[duplicatedItem].unitPrice)).toFixed(2);
+        console.log(typeof (storageItems[duplicatedItem.price]));
+        localStorage.setItem("list", JSON.stringify(storageItems));
+
     }
     duplicate = false;
     //console.log(quantity);

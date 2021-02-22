@@ -7,7 +7,7 @@ const open = document.querySelector(".fa-chevron-circle-left");
 
 const basketItems = []
 
-//Constructor
+//Constructor 
 class Item {
     constructor(id, title, quantity, unitPrice) {
         this.title = title;
@@ -67,9 +67,11 @@ function addItem(e) {
             if (isRunning == false) {
                 startTimer();
             }
-            let newItem = new Item(id, items[currentPage][id].title, quantity, items[currentPage][id].price, items[currentPage][id].price);
+
+            let newItem = new Item(id, items[currentPage][id].title, quantity, items[currentPage][id].price);
             //Add to storage
-            addToLocalStorage(newItem.id, newItem.title, newItem.quantity, items[currentPage][id].price, items[currentPage][id].price);
+            console.log(newItem)
+            addToLocalStorage(newItem.id, newItem.title, newItem.quantity, newItem.unitPrice);
         } else {
             //error msg 
             //console.log("wrong");
@@ -78,7 +80,7 @@ function addItem(e) {
     //Duplicate instead of puts as a new, updates quantity
     if (duplicate == true) {
         let storageItems = getLocalStorage();
-        console.log(storageItems[duplicatedItem]);
+        //console.log(storageItems[duplicatedItem]);
         storageItems[duplicatedItem].quantity =
             parseInt(storageItems[duplicatedItem].quantity) + parseInt(quantity);
         storageItems[duplicatedItem].price =
@@ -113,7 +115,6 @@ function deleteItem(e) {
             console.log("else");
         }
     })
-    console.log(storageItems)
     localStorage.setItem("list", JSON.stringify(storageItems));
     updateTotal(getLocalStorage());
     barDisplay();

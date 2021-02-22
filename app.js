@@ -31,12 +31,12 @@ rightArrow.addEventListener('click', function () {
 })
 
 leftArrow.addEventListener('click', function () {
-    console.log(currentPage)
+    //console.log(currentPage)
     currentPage--;
-    console.log(currentPage)
+    //console.log(currentPage)
     if (currentPage == -1) {
         currentPage = 4;
-        console.log(currentPage);
+        //console.log(currentPage);
         displayItems(items[currentPage]);
     } else {
         displayItems(items[currentPage]);

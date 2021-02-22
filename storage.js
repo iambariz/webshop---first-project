@@ -5,13 +5,13 @@ function getLocalStorage() {
         JSON.parse(localStorage.getItem('list')) : [];
 }
 
-function addToLocalStorage(id, title, quantity, price, unitPrice) {
+function addToLocalStorage(id, title, quantity, unitPrice) {
     const item = {
         id,
         title,
         quantity,
-        price,
-        unitPrice
+        unitPrice,
+        price: quantity * unitPrice,
     }
     let storageItems = getLocalStorage();
     storageItems.push(item);
@@ -51,11 +51,11 @@ function saveTime(startTime, endTime) {
 function loadTimer() {
     let timeStorage = getTimeStorage();
     startTime = new Date().getTime();
-    console.log(startTime)
+    // console.log(startTime)
     timeLeft = parseInt(timeStorage[0].endTime) - parseInt(startTime);
     timeLeft = Math.floor(timeLeft);
     if (timeLeft > 0) {
-        console.log(`The timeleft is: ${timeLeft}`);
+        //console.log(`The timeleft is: ${timeLeft}`);
         isRunning = true;
         startTimer();
         setTimeout(function () {

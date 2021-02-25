@@ -12,11 +12,7 @@ let duplicatedItem;
 //Event listerners
 window.addEventListener("DOMContentLoaded", function () {
     displayItems(items[0]);
-    displayStorageItems();
-    startStorageTime();
-    updateTotal(getLocalStorage());
     showPages();
-    checkActive();
 })
 
 rightArrow.addEventListener('click', function () {

@@ -1,5 +1,13 @@
 //Storage items
 
+window.addEventListener("DOMContentLoaded", function () {
+    displayStorageItems();
+    startStorageTime();
+    updateTotal(getLocalStorage());
+    //checkActive();
+})
+
+
 function getLocalStorage() {
     return localStorage.getItem("list") ?
         JSON.parse(localStorage.getItem('list')) : [];

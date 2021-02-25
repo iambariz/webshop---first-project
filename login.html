@@ -46,30 +46,37 @@
     </div>
 
     <main class="main">
-
-        <div class="item-container">
-            <i class="fas fa-chevron-right arrow"></i>
-
-            <i class="fas fa-chevron-left arrow"></i>
-
-            <div class="item-row">
-
+        <div class="container">
+            <div class="login">
+                <div class="login">
+                    <label for="userName">Username</label>
+                    <input type="text" name="userName" id="userName">
+                </div>
+                <div class="login">
+                    <label for="userName">Password</label>
+                    <input type="text" name="Password" id="Password">
+                </div>
             </div>
-            <div class="pages">
-
+            <div class="error-zone">
+                <span class="error-msg"></span>
             </div>
+            <div class="misc">
+                <p>Forget your password?</p>
+                <p>Don't have an account?</p>
+            </div>
+        </div>
+    </main>
 
-        </div>
-        <i class="fas fa-chevron-circle-left"></i>
-        <div class="time-bar">
-            <p> Your basket is reserved for:
-                <span class="minute">30</span>:<span class="second">00</span>
-            </p>
-        </div>
-        <script type="text/javascript" src="data.js"></script>
-        <script type="text/javascript" src="basket.js"></script>
-        <script type="text/javascript" src="timer.js"></script>
-        <script type="text/javascript" src="storage.js"></script>
+    <i class="fas fa-chevron-circle-left"></i>
+    <div class="time-bar">
+        <p> Your basket is reserved for:
+            <span class="minute">30</span>:<span class="second">00</span>
+        </p>
+    </div>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="basket.js"></script>
+    <script type="text/javascript" src="timer.js"></script>
+    <script type="text/javascript" src="storage.js"></script>
 </body>
 
 </html>

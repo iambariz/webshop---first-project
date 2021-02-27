@@ -380,10 +380,10 @@ input[type=number] {
 }
 
 .container{
-    min-width: 40rem;
+    min-width: 45rem;
     font-size: 2rem;
     padding: 4rem;
-    background-color: #00303fc4 ;
+    background-color: #003444f3 ;
     color: #fff;
     display: flex;
     flex-direction: column;

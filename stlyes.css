@@ -16,7 +16,10 @@
 
 a,a:visited{
     text-decoration: none;
+    color: #fff;
 }
+
+
 
 
 ul{
@@ -412,7 +415,7 @@ input[type=text]{
     text-align: center;
     margin: 0 auto;
     padding: 0.8rem;
-    background-color: #cdf1fbbb;
+    background-color: #005870bb;
     color: var(--secondary-bg-color);
     font-weight: 700;
     letter-spacing: 0.2rem;

@@ -402,12 +402,12 @@ input[type=number] {
 
 input[type=text]{
     margin: 0.5rem 0;
-    padding: 0.6rem 0.5rem;
+    padding: 0.8rem 0.5rem;
     width: 100%;
 }
 
 .input-group{
-    padding: 0.5rem 0;
+    padding: 0.7rem 0;
 }
 
 .btn-login{
@@ -426,5 +426,7 @@ input[type=text]{
 }
 
 .misc>p {
-    padding: 0.25rem;
+    padding: 0.5rem 0rem;
+    cursor: pointer;
 }
+

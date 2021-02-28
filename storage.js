@@ -3,6 +3,7 @@
 window.addEventListener("DOMContentLoaded", function () {
     displayStorageItems();
     startStorageTime();
+    getUserStorage();
     updateTotal(getLocalStorage());
     //checkActive();
 })
@@ -88,6 +89,23 @@ function startStorageTime() {
 function deleteBasket() {
     localStorage.clear();
 }
+
+//User script 
+
+function getUserStorage() {
+    console.log("asd");
+
+    return localStorage.getItem("userNames") ?
+        JSON.parse(localStorage.getItem('userNames')) : [{
+            userName: "Admin",
+            password: "Admin",
+            id: 0
+        }]
+}
+
+
+
+
 
 
 /*

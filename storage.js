@@ -3,7 +3,7 @@
 window.addEventListener("DOMContentLoaded", function () {
     displayStorageItems();
     startStorageTime();
-    getUserStorage();
+    adminSetup();
     updateTotal(getLocalStorage());
     //checkActive();
 })
@@ -93,19 +93,23 @@ function deleteBasket() {
 //User script 
 
 function getUserStorage() {
-    console.log("asd");
-
     return localStorage.getItem("userNames") ?
-        JSON.parse(localStorage.getItem('userNames')) : [{
-            userName: "Admin",
-            password: "Admin",
-            id: 0
-        }]
+        JSON.parse(localStorage.getItem('userNames')) : []
 }
 
-
-
-
+function adminSetup() {
+    let accountData = getUserStorage();
+    if (accountData.length == 0) {
+        const admin = {
+            userName: "Admin",
+            password: "Admin",
+            id: 0,
+        }
+        accountData.push(admin);
+        localStorage.setItem("userNames", JSON.stringify(accountData));
+        //console.log(accountData);
+    }
+}
 
 
 /*

@@ -450,5 +450,5 @@ input[type=password]:focus{
     color: #ffe600;
     font-weight: 700;
     font-size: 2rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
 }

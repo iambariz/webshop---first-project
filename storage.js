@@ -102,6 +102,8 @@ function adminSetup() {
     if (accountData.length == 0) {
         const admin = {
             userName: "Admin",
+            firstName: "Firstname",
+            lastName: "Lastname",
             password: "Admin",
             id: 0,
         }
@@ -119,10 +121,12 @@ function loggedInUser() {
         JSON.parse(localStorage.getItem('loggedInUser')) : []
 }
 
-function loginUser(name, id, time) {
+function loginUser(name, id, firstName, lastName, time) {
     loggedInList = loggedInUser();
     const activeUser = {
         userName: name,
+        firstName: firstName,
+        lastName: lastName,
         id: id,
         time: time,
     }

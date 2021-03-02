@@ -26,7 +26,7 @@ function checkUser() {
         if (userNames[i].userName == userInput.value &&
             userNames[i].userName == userPw.value) {
             //Login comes here
-            loginUser(userNames[i].userName, userNames[i].id, new Date().getTime());
+            loginUser(userNames[i].userName, userNames[i].id, userNames[i].firstName, userNames[i].lastName, new Date().getTime());
             break;
         } else {
             errorMsgDisplay();

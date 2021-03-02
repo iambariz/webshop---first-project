@@ -111,6 +111,28 @@ function adminSetup() {
     }
 }
 
+//Store the logged in user's data.
+//However, it's not the efficent way, it'll do for testing only
+
+function loggedInUser() {
+    return localStorage.getItem("loggedInUser") ?
+        JSON.parse(localStorage.getItem('loggedInUser')) : []
+}
+
+function loginUser(name, id, time) {
+    loggedInList = loggedInUser();
+    const activeUser = {
+        userName: name,
+        id: id,
+        time: time,
+    }
+    loggedInList[0] = activeUser;
+    console.log(loggedInList);
+    localStorage.setItem("loggedInUser", JSON.stringify(loggedInList));
+}
+
+
+
 
 /*
 Old functions

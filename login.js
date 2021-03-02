@@ -27,6 +27,9 @@ function checkUser() {
             userNames[i].userName == userPw.value) {
             //Login comes here
             loginUser(userNames[i].userName, userNames[i].id, userNames[i].firstName, userNames[i].lastName, new Date().getTime());
+            loggedIn = true;
+            location.reload();
+            //Optional?
             break;
         } else {
             errorMsgDisplay();
@@ -36,3 +39,8 @@ function checkUser() {
 }
 
 loginButton.addEventListener('click', checkUser);
+window.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter' && userPw.value.length > 0 && userInput.value.length > 0) {
+        checkUser();
+    }
+})

@@ -129,6 +129,7 @@ function loginUser(name, id, firstName, lastName, time) {
         lastName: lastName,
         id: id,
         time: time,
+        loggedIn: true,
     }
     loggedInList[0] = activeUser;
     console.log(loggedInList);

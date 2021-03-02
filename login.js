@@ -24,10 +24,9 @@ function checkUser() {
     let userNames = getUserStorage();
     for (let i = 0; i < userNames.length; i++) {
         if (userNames[i].userName == userInput.value &&
-            userNames[i].userName == userPw.value) {
+            userNames[i].password == userPw.value) {
             //Login comes here
             loginUser(userNames[i].userName, userNames[i].id, userNames[i].firstName, userNames[i].lastName, new Date().getTime());
-            loggedIn = true;
             location.reload();
             //Optional?
             break;

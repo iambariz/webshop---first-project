@@ -8,7 +8,6 @@ const pages = document.querySelector(".pages");
 let currentPage = 0;
 let duplicate = false;
 let duplicatedItem;
-let loggedIn = false;
 
 //Event listerners
 window.addEventListener("DOMContentLoaded", function () {

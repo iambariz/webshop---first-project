@@ -145,8 +145,10 @@ function duplicateCheck(id) {
 function barDisplay() {
     if (getLocalStorage().length > 0) {
         sideBar.style.right = "0px";
+        open.style.display = "block";
     } else {
         sideBar.style.right = "-350px";
+        open.style.display = "none";
     }
 }
 

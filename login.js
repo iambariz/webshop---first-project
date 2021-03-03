@@ -27,7 +27,7 @@ function checkUser() {
             userNames[i].password == userPw.value) {
             //Login comes here
             loginUser(userNames[i].userName, userNames[i].id, userNames[i].firstName, userNames[i].lastName, new Date().getTime());
-            location.reload();
+            redirect();
             //Optional?
             break;
         } else {
@@ -43,3 +43,7 @@ window.addEventListener('keypress', function (e) {
         checkUser();
     }
 })
+
+function redirect() {
+    window.location.href = "user.html";
+};

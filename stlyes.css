@@ -16,7 +16,7 @@
 
 a,a:visited{
     text-decoration: none;
-    color: #fff;
+    color: inherit;
 }
 
 
@@ -204,6 +204,7 @@ input[type=number] {
     transform-origin: top;  
     transform-style: flat;  
     transition: 0.7s ease all;
+    z-index: 2;
 }
 
 .basket-header{
@@ -237,12 +238,13 @@ input[type=number] {
 }
 
 .total-price{
-    float: right;
+    text-align: end;
+
 }
 
 .total-price-holder{
     font-size: 1.5rem;
-    font-style: italic
+    font-style: italic;
 }
 
 .time-bar{
@@ -262,6 +264,21 @@ input[type=number] {
     visibility: hidden;
     opacity: 0;
     transition: 0.8s ease all;
+}
+
+.btn-basket{
+    border: 1px solid var(--secondary-bg-color);
+    border-radius: 0.5rem;
+    background-color: #fff;
+    font-weight: 700;
+}
+
+.sidebar-buttons{
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    color: var(--secondary-bg-color);
+
 }
 
 /* Session msg display */
@@ -340,6 +357,7 @@ input[type=number] {
     color: var(--secondary-bg-color);
     bottom: 50%;
     right: 0;
+    z-index: 1;
     font-size: 5rem;
     cursor: pointer;
     animation: leftRight 1.2s linear infinite alternate-reverse;

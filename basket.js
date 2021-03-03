@@ -50,7 +50,7 @@ function updateTotal(array) {
         total = total + parseFloat(array[i].price);
     }
     total = total.toFixed(2);
-    totalDisplay.textContent = total;
+    totalDisplay.textContent = total + " £";
 }
 
 

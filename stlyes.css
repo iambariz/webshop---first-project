@@ -29,6 +29,7 @@ ul{
 html{
     font-size: 62.5%;
     font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
 }
 
 body{
@@ -208,7 +209,7 @@ input[type=number] {
     right: -350px;
     top: 0;
     padding: 0rem 2rem 2rem 2rem;
-    min-height: 75vh;
+    min-height: 95vh;
     background-color: var(--secondary-bg-color);
     color: #fff;
     transform-origin: top;  
@@ -343,6 +344,7 @@ input[type=number] {
     font-size: 4rem;
     color: var(--secondary-bg-color);
     cursor: pointer;
+    display: block;
 }
 
 .fas.fa-chevron-right{
@@ -493,6 +495,7 @@ input[type=password]:focus{
     .nav-link{
         padding: 0rem 2rem;
     }
+
 }
 @media only screen and (max-width: 800px){
 	/*Big smartphones [426px -> 600px]*/
@@ -524,10 +527,10 @@ input[type=password]:focus{
         display: none;
         top: 0;
         left: 0;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        height: 100vh;
+        height: 100%;
         width: 100vw;
         z-index: 1000;
         background-color: #00303ffd;
@@ -544,6 +547,9 @@ input[type=password]:focus{
         text-transform: uppercase;
     }
 
+    .arrow{
+        display: none;
+    }
     
 }
 @media only screen and (max-width: 425px){

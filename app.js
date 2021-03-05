@@ -40,6 +40,7 @@ leftArrow.addEventListener('click', function () {
     checkActive()
 })
 
+
 //Display mechanism
 function displayItems(array) {
     let display = array.map(function (item) {

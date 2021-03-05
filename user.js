@@ -1,6 +1,11 @@
-loginMenu = document.querySelector(".login");
-userDisplay = document.querySelector(".userName");
+const loginMenu = document.querySelector(".login");
+const userDisplay = document.querySelector(".userName");
+const navBar = document.querySelector(".nav");
+const closeNav = document.querySelector(".fas.fa-times");
+const openNav = document.querySelector(".fas.fa-bars");
 
+
+//REPAIR LATER !! IT HAS TO BE UNDEFENIED
 function checkLogin() {
     loggedInList = loggedInUser();
     if (loggedInList[0].loggedIn == false) {
@@ -14,5 +19,17 @@ function checkLogin() {
         console.log(loggedInList[0].firstName)
     }
 }
+
+openNav.addEventListener('click', function () {
+    navBar.classList.add("open");
+    openNav.classList.add("open");
+
+})
+
+closeNav.addEventListener('click', function () {
+    navBar.classList.remove("open");
+    openNav.classList.remove("open");
+})
+
 
 checkLogin()

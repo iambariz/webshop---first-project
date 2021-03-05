@@ -504,19 +504,24 @@ input[type=password]:focus{
     .fas.fa-times,
     .fas.fa-bars{
         font-size: 3rem;
+        position: absolute;
+        top: 1.5rem;
+        right: 3rem;
     }
 
     .fas.fa-times{
-        position: absolute;
-        top: 2rem;
-        right: 3rem;
+        display: none;
         font-size: 4rem;
         z-index: 1024;
     }
 
+    .fas.fa-times.open{
+        display: block;
+    }
+
     .navbar ul{
         position: absolute;
-        display: flex;
+        display: none;
         top: 0;
         left: 0;
         justify-content: center;
@@ -526,6 +531,10 @@ input[type=password]:focus{
         width: 100vw;
         z-index: 1000;
         background-color: #00303ffd;
+    }
+
+    .navbar ul.open{
+        display: flex;
     }
 
     .navbar ul a{

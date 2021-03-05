@@ -30,7 +30,7 @@ function addToLocalStorage(id, title, quantity, unitPrice) {
 function displayStorageItems() {
     let storageItems = getLocalStorage();
     basketDisplay(storageItems);
-    barDisplay();
+    //barDisplay();
     updateTotal(basketItems);
 }
 
@@ -71,7 +71,7 @@ function loadTimer() {
             displayTimer();
         }, 1000);
     } else {
-        errorMsg();
+        //errorMsg();
     }
 
 }

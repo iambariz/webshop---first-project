@@ -1,14 +1,14 @@
 const loginMenu = document.querySelector(".login");
 const userDisplay = document.querySelector(".userName");
 const navBar = document.querySelector(".nav");
-const closeNav = document.querySelector(".fas.fa-times");
+const closeNav = document.querySelector(".fas.fa-times-circle");
 const openNav = document.querySelector(".fas.fa-bars");
 
 
 //REPAIR LATER !! IT HAS TO BE UNDEFENIED
 function checkLogin() {
     loggedInList = loggedInUser();
-    if (loggedInList[0].loggedIn == false) {
+    if (loggedInList[0].loggedIn == undefined || loggedInList[0].loggedIn == false) {
         loginMenu.style.display = "inline";
         userDisplay.style.display = "none";
     }
@@ -22,13 +22,12 @@ function checkLogin() {
 
 openNav.addEventListener('click', function () {
     navBar.classList.add("open");
-    openNav.classList.add("open");
-
+    closeNav.classList.add("open");
 })
 
 closeNav.addEventListener('click', function () {
     navBar.classList.remove("open");
-    openNav.classList.remove("open");
+    closeNav.classList.remove("open");
 })
 
 

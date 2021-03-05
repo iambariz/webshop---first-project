@@ -90,7 +90,7 @@ function addItem(e) {
     }
     duplicate = false;
     //console.log(quantity);
-    barDisplay();
+    //barDisplay();
     //Display basket
     displayStorageItems();
     updateTotal(getLocalStorage());
@@ -117,7 +117,7 @@ function deleteItem(e) {
     })
     localStorage.setItem("list", JSON.stringify(storageItems));
     updateTotal(getLocalStorage());
-    barDisplay();
+    //barDisplay();
     if (getLocalStorage().length == 0) {
         stopTimer();
     }
@@ -142,6 +142,7 @@ function duplicateCheck(id) {
     }
 }
 
+/*Old function
 function barDisplay() {
     if (getLocalStorage().length > 0) {
         sideBar.style.right = "0px";
@@ -150,7 +151,7 @@ function barDisplay() {
         sideBar.style.right = "-350px";
         open.style.display = "none";
     }
-}
+}*/
 
 collapse.addEventListener('click', function () {
     sideBar.style.right = "-350px";

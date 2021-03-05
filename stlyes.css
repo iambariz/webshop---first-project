@@ -77,7 +77,7 @@ input[type=number] {
 .navbar{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     font-family: 'Ubuntu', sans-serif;    padding: 2rem 4rem;
     background: var(--secondary-bg-color);  /* fallback for old browsers */
@@ -501,7 +501,7 @@ input[type=password]:focus{
         cursor: pointer;
     }
     /* Selector above not too specified, to change times */
-    .fas.fa-times,
+    .fas.fa-times-circle,
     .fas.fa-bars{
         font-size: 3rem;
         position: absolute;
@@ -509,13 +509,13 @@ input[type=password]:focus{
         right: 3rem;
     }
 
-    .fas.fa-times{
+    .fas.fa-times-circle{
         display: none;
         font-size: 4rem;
         z-index: 1024;
     }
 
-    .fas.fa-times.open{
+    .fas.fa-times-circle.open{
         display: block;
     }
 

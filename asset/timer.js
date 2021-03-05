@@ -5,7 +5,6 @@ const timeDisplay = document.querySelector(".time-bar");
 
 
 //Variables
-let isRunning = false;
 let startTime;
 let endTime;
 let timeLeft;

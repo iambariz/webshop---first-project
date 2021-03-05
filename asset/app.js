@@ -7,6 +7,7 @@ const pages = document.querySelector(".pages");
 //Variables
 let currentPage = 0;
 let duplicate = false;
+let isRunning = false;
 let duplicatedItem;
 
 //Event listerners

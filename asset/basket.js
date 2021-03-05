@@ -67,7 +67,6 @@ function addItem(e) {
             if (isRunning == false) {
                 startTimer();
             }
-
             let newItem = new Item(id, items[currentPage][id].title, quantity, items[currentPage][id].price);
             //Add to storage
             console.log(newItem)

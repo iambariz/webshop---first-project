@@ -71,7 +71,7 @@ function loadTimer() {
             displayTimer();
         }, 1000);
     } else {
-        //errorMsg();
+        errorMsg();
     }
 
 }

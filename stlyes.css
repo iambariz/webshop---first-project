@@ -262,7 +262,7 @@ input[type=number] {
 
 .time-bar{
     color: #fff;
-    position: sticky;
+    position: absolute;
     height: auto;
     width: 100%;
     bottom: 0;

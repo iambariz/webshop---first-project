@@ -1,17 +1,3 @@
-//Selectors
-const secondDisplay = document.querySelector(".second");
-const minuteDisplay = document.querySelector(".minute");
-const timeDisplay = document.querySelector(".time-bar");
-
-
-//Variables
-let startTime;
-let endTime;
-let timeLeft;
-let minutesLeft;
-let secondsLeft;
-let timer;
-
 //Get time values
 function getTimes() {
     startTime = new Date();
@@ -27,7 +13,6 @@ function getTimes() {
 function getMS() {
     minutesLeft = Math.floor(timeLeft / 60000);
     secondsLeft = (timeLeft - (minutesLeft * 60000)) / 1000;
-
     displayTime(minutesLeft, Math.floor(secondsLeft));
     timeLeft = timeLeft - 1000;
 }
@@ -52,6 +37,7 @@ function myTimer() {
         isRunning = true;
         displayTimer();
         getTimes();
+        loadTimer();
     } else {
 
     }
@@ -59,7 +45,7 @@ function myTimer() {
         getMS()
     } else {
         stopTimer();
-        errorMsg();
+        displayErrorMsg();
     }
 }
 
@@ -71,6 +57,7 @@ function stopTimer() {
     minuteDisplay.textContent = "30";
     secondDisplay.textContent = "00";
 }
+
 
 function startTimer() {
     timer = setInterval(myTimer, 1000);

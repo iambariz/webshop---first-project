@@ -1,12 +1,3 @@
-//Selectors
-const basketList = document.querySelector(".basketList");
-const totalDisplay = document.querySelector(".total-price-holder");
-const sideBar = document.querySelector(".sidebar");
-const collapse = document.querySelector(".fa-chevron-circle-right");
-const open = document.querySelector(".fa-chevron-circle-left");
-
-const basketItems = []
-
 //Constructor 
 class Item {
     constructor(id, title, quantity, unitPrice) {

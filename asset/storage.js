@@ -1,14 +1,3 @@
-//Storage items
-
-window.addEventListener("DOMContentLoaded", function () {
-    displayStorageItems();
-    startStorageTime();
-    adminSetup();
-    updateTotal(getLocalStorage());
-    //checkActive();
-})
-
-
 function getLocalStorage() {
     return localStorage.getItem("list") ?
         JSON.parse(localStorage.getItem('list')) : [];
@@ -30,12 +19,8 @@ function addToLocalStorage(id, title, quantity, unitPrice) {
 function displayStorageItems() {
     let storageItems = getLocalStorage();
     basketDisplay(storageItems);
-    //barDisplay();
     updateTotal(basketItems);
 }
-
-
-
 
 //Storage time
 
@@ -71,7 +56,7 @@ function loadTimer() {
             displayTimer();
         }, 1000);
     } else {
-        errorMsg();
+        displayErrorMsg();
     }
 
 }
@@ -82,7 +67,7 @@ function startStorageTime() {
     if (timeStorage.length < 1) {
         //  console.log("empty");
     } else {
-        loadTimer();
+        myTimer();
     }
 }
 
@@ -136,8 +121,25 @@ function loginUser(name, id, firstName, lastName, time) {
     localStorage.setItem("loggedInUser", JSON.stringify(loggedInList));
 }
 
-
-
+function displayErrorMsg() {
+    const sessionContainer = document.createElement("div");
+    sessionContainer.classList.add("session-msg");
+    const msgContainer = document.createElement("div");
+    msgContainer.classList.add("msg-container");
+    const paragraph = document.createElement("p");
+    const btn = document.createElement("a");
+    btn.classList = "btn btn-submit btn-session";
+    btn.addEventListener('click', function () {
+        localStorage.clear();
+        window.location.reload();
+    })
+    paragraph.textContent = "Your session has expired!";
+    btn.textContent = "Okay";
+    msgContainer.appendChild(paragraph);
+    msgContainer.appendChild(btn);
+    sessionContainer.appendChild(msgContainer);
+    document.body.appendChild(sessionContainer);
+}
 
 /*
 Old functions

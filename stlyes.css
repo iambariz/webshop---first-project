@@ -376,6 +376,10 @@ input[type=number] {
     animation: leftRight 1.2s linear infinite alternate-reverse;
 }
 
+.btn-login.btn-register{
+    color: #fff;
+}
+
 @keyframes leftRight {
     0%   {transform: translateX(30%);}
     100% {transform: translateX(15%);}

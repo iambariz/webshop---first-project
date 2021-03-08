@@ -421,6 +421,7 @@ input[type=number] {
     min-width: 45rem;
     font-size: 2rem;
     padding: 4rem;
+    margin: 4rem;
     background-color: #003444f3 ;
     color: #fff;
     display: flex;
@@ -554,6 +555,11 @@ input[type=password]:focus{
 
     .arrow{
         display: none;
+    }
+
+    .container{
+        min-width: 5rem;
+        z-index: -1;
     }
     
 }

@@ -14,10 +14,15 @@ function getRandom(min, max) {
 }
 
 function getTest() {
-    firsRandom = getRandom();
-    secondNum = getRandom();
-    operator = getRandom(0, operator.length);
+    let firsRandom = getRandom(0, 100);
+    let secondNum = getRandom(0, 100);
+    let operator = operators[getRandom(0, toSolve.length)];
     toSolve.push(firsRandom, operator, secondNum);
+    console.log(toSolve);
 }
 
-regBtn.addEventListener('click', )
+function solveIt() {
+    toSolve.join("");
+}
+
+getTest()

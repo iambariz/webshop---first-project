@@ -11,6 +11,7 @@ const operators = ["*", "-", "+"];
 let toSolve = [];
 let passedTest = false;
 let cpuResult = getResult();
+let duplicateUser = false;
 
 
 function getRandom(min, max) {
@@ -47,6 +48,16 @@ function checkResult() {
 
 }
 
+function duplicateUserCheck(newUser) {
+    for (let i = 0; i < accountData.length; i++) {
+        const currentName = accountData[i].userName;
+        if (currentName == newUser) {
+            duplicateUser = true;
+            break;
+        }
+    }
+}
+
 function checkReq() {
     let newUser;
     let newPw;
@@ -61,23 +72,20 @@ function checkReq() {
         //Error msg - password
     }
     checkResult();
-    if (newUser != undefined && newPw != undefined && passedTest == true) {
+    duplicateUserCheck(newUser);
+
+    if (newUser != undefined && newPw != undefined && passedTest == true && duplicateUser == false) {
         let accountData = getUserStorage();
-        if (accountData.length == 0) {
-            const user = {
-                userName: newUser,
-                firstName: " ",
-                lastName: " ",
-                password: newPw,
-                id: new Date.getTime(),
-            }
-            console.log(user)
-            accountData.push(user);
-            localStorage.setItem("userNames", JSON.stringify(accountData));
+        const user = {
+            userName: newUser,
+            firstName: " ",
+            lastName: " ",
+            password: newPw,
+            id: new Date.getTime(),
         }
-        console.log("Succes");
+        accountData.push(user);
+        localStorage.setItem("userNames", JSON.stringify(accountData));
     }
-    console.log("bum")
 }
 
 regBtn.addEventListener('click', checkReq);

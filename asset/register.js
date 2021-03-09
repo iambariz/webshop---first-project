@@ -13,16 +13,13 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function getTest() {
-    let firsRandom = getRandom(0, 100);
-    let secondNum = getRandom(0, 100);
-    let operator = operators[getRandom(0, toSolve.length)];
+function getResult() {
+    let firsRandom = getRandom(4, 10);
+    let secondNum = getRandom(0, 4);
+    let operator = operators[getRandom(0, 3)];
     toSolve.push(firsRandom, operator, secondNum);
-    console.log(toSolve);
+    let connected = toSolve.join("");
+    connected = eval(connected);
 }
 
-function solveIt() {
-    toSolve.join("");
-}
-
-getTest()
+getResult()

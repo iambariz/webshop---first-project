@@ -15,11 +15,21 @@ function getRandom(min, max) {
 
 function getResult() {
     let firsRandom = getRandom(4, 10);
-    let secondNum = getRandom(0, 4);
-    let operator = operators[getRandom(0, 3)];
-    toSolve.push(firsRandom, operator, secondNum);
+    let secondRandom = getRandom(1, 4);
+    let operatorRandom = operators[getRandom(0, 3)];
+    console.log(operatorRandom)
+    updateDisplays(firsRandom, operatorRandom, secondRandom);
+    toSolve.push(firsRandom, operatorRandom, secondRandom);
     let connected = toSolve.join("");
     connected = eval(connected);
+    console.log(connected)
+    return connected;
+}
+
+function updateDisplays(one, randomOperator, two) {
+    firstNum.textContent = one;
+    operator.textContent = randomOperator;
+    secondNum.textContent = two;
 }
 
 getResult()

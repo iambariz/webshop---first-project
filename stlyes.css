@@ -437,7 +437,9 @@ input[type=number] {
 }
 
 input[type=text],
-input[type=password]{
+input[type=password],
+input[type=email]
+{
     margin: 0.5rem 0;
     padding: 0.8rem 0.5rem;
     width: 100%;
@@ -445,6 +447,7 @@ input[type=password]{
 }
 
 input[type=text]:focus,
+input[type=email]:focus,
 input[type=password]:focus{
     outline: 2px solid  #fff;
 }
@@ -492,6 +495,30 @@ input[type=password]:focus{
 
 .error-msg{
     transition: opacity 0.3s ease-in-out;
+}
+
+.form-header{
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.form-header::after{
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 15rem;
+    height: 0.2rem;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+
 }
 
 /* Media queries */

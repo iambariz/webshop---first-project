@@ -1,11 +1,15 @@
 //Selectors
 const userField = document.querySelector('#userName-Reg');
 const pwField = document.querySelector('#password-Reg');
+const firstNameField = document.querySelector('#firstName-Reg');
+const surNameField = document.querySelector('#surName-Reg');
+const emailField = document.querySelector('#email-Reg');
+const testField = document.querySelector('#robot-test');
+
 const regBtn = document.querySelector('.btn-register');
 const firstNum = document.querySelector('.first-num');
 const secondNum = document.querySelector('.second-num');
 const operator = document.querySelector('.operator');
-const testField = document.querySelector('#robot-test');
 
 const operators = ["*", "-", "+"];
 let toSolve = [];

@@ -14,8 +14,12 @@ const operator = document.querySelector('.operator');
 const operators = ["*", "-", "+"];
 let toSolve = [];
 let passedTest = false;
-let cpuResult = getResult();
 let duplicateUser = false;
+let dataProblem = false;
+let specialUsed = false;
+let cpuResult = getResult();
+let accountData = getUserStorage();
+
 
 
 function getRandom(min, max) {
@@ -29,10 +33,7 @@ function getResult() {
     updateDisplays(firstRandom, operatorRandom, secondRandom);
     toSolve.push(firstRandom, operatorRandom, secondRandom);
     let connected = toSolve.join("");
-    //console.log(connected)
     connected = eval(connected);
-    //console.log(connected)
-
     return connected;
 }
 
@@ -68,28 +69,41 @@ function checkReq() {
     if (pwField.length > 6) {
         newPw = pwField.value;
     } else {
-        //Error msg - password
+        dataProblem = true;
     }
-    if (userField.length > 6) {
+    if (userField.length > 5) {
         newUser = userField.value
     } else {
-        //Error msg - password
+        dataProblem = true;
     }
+
     checkResult();
     duplicateUserCheck(newUser);
+    checkUserName(newUser)
 
-    if (newUser != undefined && newPw != undefined && passedTest == true && duplicateUser == false) {
-        let accountData = getUserStorage();
+    if (passedTest == true && duplicateUser == false && dataProblem == false && specialUsed == false) {
         const user = {
             userName: newUser,
-            firstName: " ",
-            lastName: " ",
+            firstName: firstNameField.value,
+            lastName: surNameField.value,
+            email: emailField.value,
             password: newPw,
             id: new Date.getTime(),
         }
         accountData.push(user);
         localStorage.setItem("userNames", JSON.stringify(accountData));
+    } else {
+        //Error
     }
 }
+
+function checkUserName(username) {
+    var pattern = new RegExp(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/); //unacceptable chars
+    if (pattern.test(username)) {
+        specialUsed = true;
+    }
+    specialUsed = false;
+}
+
 
 regBtn.addEventListener('click', checkReq);

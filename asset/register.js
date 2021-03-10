@@ -66,14 +66,16 @@ function duplicateUserCheck(newUser) {
 function checkReq() {
     let newUser;
     let newPw;
-    if (pwField.length > 6) {
+    if (pwField.value.length > 6) {
         newPw = pwField.value;
     } else {
+        console.log("pw")
         dataProblem = true;
     }
-    if (userField.length > 5) {
+    if (userField.value.length > 5) {
         newUser = userField.value
     } else {
+        console.log("user")
         dataProblem = true;
     }
 
@@ -88,12 +90,13 @@ function checkReq() {
             lastName: surNameField.value,
             email: emailField.value,
             password: newPw,
-            id: new Date.getTime(),
+            id: new Date().getTime(),
         }
+        console.log("Passed")
         accountData.push(user);
         localStorage.setItem("userNames", JSON.stringify(accountData));
     } else {
-        //Error
+        console.log(passedTest, duplicateUser, dataProblem, specialUsed)
     }
 }
 

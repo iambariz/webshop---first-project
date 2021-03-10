@@ -96,7 +96,7 @@ function checkReq() {
         accountData.push(user);
         localStorage.setItem("userNames", JSON.stringify(accountData));
     } else {
-        console.log(passedTest, duplicateUser, dataProblem, specialUsed)
+        window.location.reload();
     }
 }
 

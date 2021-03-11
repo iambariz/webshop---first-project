@@ -5,6 +5,7 @@ const firstNameField = document.querySelector('#firstName-Reg');
 const surNameField = document.querySelector('#surName-Reg');
 const emailField = document.querySelector('#email-Reg');
 const testField = document.querySelector('#robot-test');
+const errorFieldReg = document.querySelector('.error-msg-reg');
 
 const regBtn = document.querySelector('.btn-register');
 const firstNum = document.querySelector('.first-num');
@@ -69,13 +70,11 @@ function checkReq() {
     if (pwField.value.length > 6) {
         newPw = pwField.value;
     } else {
-        console.log("pw")
         dataProblem = true;
     }
     if (userField.value.length > 5) {
         newUser = userField.value
     } else {
-        console.log("user")
         dataProblem = true;
     }
 
@@ -95,8 +94,9 @@ function checkReq() {
         console.log("Passed")
         accountData.push(user);
         localStorage.setItem("userNames", JSON.stringify(accountData));
-    } else {
         window.location.reload();
+    } else {
+
     }
 }
 
@@ -107,6 +107,5 @@ function checkUserName(username) {
     }
     specialUsed = false;
 }
-
 
 regBtn.addEventListener('click', checkReq);

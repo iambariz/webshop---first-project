@@ -3,7 +3,7 @@ userPw = document.querySelector("#password");
 errorMsg = document.querySelector(".error-msg");
 loginButton = document.querySelector(".btn-login");
 
-
+/*Moved somewhere else
 function errorMsgDisplay() {
     errorMsg.textContent = "Invalid username / password"
 }
@@ -19,7 +19,7 @@ function clearMsg() {
         errorMsg.style.opacity = 1;
     }, 2000);
 }
-
+*/
 function checkUser() {
     let userNames = getUserStorage();
     for (let i = 0; i < userNames.length; i++) {
@@ -31,8 +31,7 @@ function checkUser() {
             //Optional?
             break;
         } else {
-            errorMsgDisplay();
-            clearMsg();
+            errorMsgDisplay(errorMsg, "Invalid username / password");
         }
     }
 }

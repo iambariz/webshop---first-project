@@ -21,3 +21,21 @@ closeNav.addEventListener('click', function () {
     navBar.classList.remove("open");
     closeNav.classList.remove("open");
 })
+
+
+function errorMsgDisplay(field, msg) {
+    field.textContent = msg;
+    clearMsg(field);
+}
+
+function clearMsg(field) {
+    setTimeout(function () {
+        field.style.opacity = 0;
+    }, 1000);
+    setTimeout(function () {
+        field.textContent = "";
+    }, 2000);
+    setTimeout(function () {
+        field.style.opacity = 1;
+    }, 2000);
+}

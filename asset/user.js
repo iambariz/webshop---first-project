@@ -23,19 +23,19 @@ closeNav.addEventListener('click', function () {
 })
 
 
-function errorMsgDisplay(field, msg) {
+function errorMsgDisplay(field, msg, time = 1000) {
     field.textContent = msg;
-    clearMsg(field);
+    clearMsg(field, time);
 }
 
-function clearMsg(field) {
-    setTimeout(function () {
-        field.style.opacity = 0;
-    }, 1000);
-    setTimeout(function () {
-        field.textContent = "";
-    }, 2000);
+function clearMsg(field, time) {
     setTimeout(function () {
         field.style.opacity = 1;
-    }, 2000);
+    }, time);
+    setTimeout(function () {
+        field.style.opacity = 0;
+    }, time + 1000);
+    setTimeout(function () {
+        field.textContent = "";
+    }, time + 1800);
 }

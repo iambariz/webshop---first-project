@@ -80,8 +80,7 @@ function checkReq() {
 
     checkResult();
     duplicateUserCheck(newUser);
-    checkUserName(newUser)
-
+    checkUserName(newUser);
     if (passedTest == true && duplicateUser == false && dataProblem == false && specialUsed == false) {
         const user = {
             userName: newUser,
@@ -96,7 +95,7 @@ function checkReq() {
         localStorage.setItem("userNames", JSON.stringify(accountData));
         window.location.reload();
     } else {
-
+        decideError();
     }
 }
 
@@ -106,6 +105,18 @@ function checkUserName(username) {
         specialUsed = true;
     }
     specialUsed = false;
+}
+
+function decideError() {
+    if (passedTest == false) {
+        errorMsgDisplay(errorFieldReg, "Test check failed", 2000)
+    } else if (duplicateUser == true) {
+        errorMsgDisplay(errorFieldReg, "Username already exists", 2000)
+    } else if (dataProblem == true) {
+        errorMsgDisplay(errorFieldReg, "User / PW too short", 2000)
+    } else if (specialUsed == true) {
+        errorMsgDisplay(errorFieldReg, "Special characters are not allowed", 2000)
+    }
 }
 
 regBtn.addEventListener('click', checkReq);

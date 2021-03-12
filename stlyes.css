@@ -538,6 +538,51 @@ input[type=password]:focus{
 
 }
 
+.username{
+    padding-bottom: 2rem;
+}
+
+.welcome{
+    font-size: 3.3rem;
+}
+
+.topic-header{
+    padding-bottom: 1.8rem;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+}
+
+.row-item{
+    max-width: 30rem;
+    min-width: 20rem;
+}
+
+.adress{
+    max-width: 55rem;
+    width: 100%;
+}
+
+.data-item{
+    font-size: 2.4rem;
+}
+
+.btn.btn-user{
+    background-color: #fff;
+    max-width: 15rem;
+    color: var(--secondary-bg-color);
+    border-radius: 2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 2rem;
+}
+
 /* Media queries */
 
 @media only screen and (max-width: 900px){

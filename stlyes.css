@@ -583,6 +583,28 @@ input[type=password]:focus{
     margin-top: 2rem;
 }
 
+.row-buttons{
+    margin: 3rem 0rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hr-row{
+    min-width: 25rem;
+    height: 0.1rem;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+}
+
+.edit{
+    min-width: 12.5rem;
+
+}
+
 /* Media queries */
 
 @media only screen and (max-width: 900px){
@@ -652,5 +674,7 @@ input[type=password]:focus{
     
 }
 @media only screen and (max-width: 425px){
-	/*Small smartphones [325px -> 425px]*/
+    .row-buttons{
+        justify-content: center;
+    }
 }

@@ -443,6 +443,7 @@ input[type=number] {
     color: #fff;
     display: flex;
     flex-direction: column;
+    transition: 0.8s ease all;
 }
 
 .labels{
@@ -557,7 +558,6 @@ input[type=password]:focus{
     flex-wrap: wrap;
     padding-bottom: 1rem;
 }
-
 .row-item{
     max-width: 30rem;
     min-width: 20rem;
@@ -578,13 +578,13 @@ input[type=password]:focus{
     color: var(--secondary-bg-color);
     border-radius: 2rem;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 700;
     text-align: center;
     margin-top: 2rem;
 }
 
 .row-buttons{
-    margin: 3rem 0rem;
+    margin: 1rem 0rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -602,7 +602,11 @@ input[type=password]:focus{
 
 .edit{
     min-width: 12.5rem;
+}
 
+.done{
+    min-width: 12.5rem;
+    display: none;
 }
 
 /* Media queries */

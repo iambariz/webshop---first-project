@@ -8,6 +8,7 @@ const editUserBtn = document.querySelector(".edit");
 const doneBtn = document.querySelector(".done");
 const firstNameInput = document.querySelector(".input-fname");
 const surNameInput = document.querySelector(".input-sname");
+const adressInput = document.querySelector(".input-adress");
 
 let editMode = false;
 
@@ -15,12 +16,17 @@ function editToggler() {
     if (editMode == false) {
         editMode == true;
         toggleDisplay(doneBtn, editUserBtn);
-        toggleDisplay(firstNameDisplays[1], firstNameInput);
-        toggleDisplay(surNameDisplays[1], surNameInput);
+        toggleDisplay(firstNameInput, firstNameDisplays[1]);
+        toggleDisplay(surNameInput, surNameDisplays[1]);
+        toggleDisplay(adressInput, adressField);
     }
     if (editMode == true) {
         editMode == false;
         toggleDisplay(doneBtn, editUserBtn);
+        toggleDisplay(firstNameInput, firstNameDisplays[1]);
+        toggleDisplay(surNameInput, surNameDisplays[1]);
+        toggleDisplay(adressInput, adressField);
+
     }
 }
 

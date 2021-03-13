@@ -14,34 +14,55 @@ let editMode = false;
 
 function editToggler() {
     if (editMode == false) {
-        editMode == true;
-        toggleDisplay(doneBtn, editUserBtn);
-        toggleDisplay(firstNameInput, firstNameDisplays[1]);
-        toggleDisplay(surNameInput, surNameDisplays[1]);
-        toggleDisplay(adressInput, adressField);
+        toggleDisplay(editUserBtn, doneBtn);
+        toggleDisplay(firstNameDisplays[1], firstNameInput, );
+        toggleDisplay(surNameDisplays[1], surNameInput, );
+        toggleDisplay(adressField, adressInput, );
+        checkLogin();
     }
     if (editMode == true) {
-        editMode == false;
         toggleDisplay(doneBtn, editUserBtn);
-        toggleDisplay(firstNameInput, firstNameDisplays[1]);
-        toggleDisplay(surNameInput, surNameDisplays[1]);
-        toggleDisplay(adressInput, adressField);
-
+        toggleDisplay(firstNameDisplays[1], firstNameInput, );
+        toggleDisplay(surNameDisplays[1], surNameInput, );
+        toggleDisplay(adressField, adressInput, );
+        checkLogin();
+        displayName();
     }
+    toggleEdit();
 }
 
 function toggleDisplay(x, y) {
-    if (x.style.display === "inline-block") {
+    if (x.style.display == "inline-block") {
         x.style.display = "none";
     } else {
         x.style.display = "inline-block";
     }
-    if (y.style.display === "none") {
+    if (y.style.display == "none") {
         y.style.display = "inline-block";
     } else {
         y.style.display = "none";
     }
 }
+
+function displayName() {
+    console.log("in")
+    loggedInList = loggedInUser();
+    firstNameDisplays.forEach(function (e) {
+        e.textContent = loggedInList[0].firstName
+    })
+    surNameDisplays.forEach(function (e) {
+        e.textContent = loggedInList[0].surName
+    })
+}
+
+function toggleEdit() {
+    if (editMode == true) {
+        editMode = false;
+    } else {
+        editMode = true;
+    }
+}
+
 
 editUserBtn.addEventListener('click', editToggler);
 doneBtn.addEventListener('click', editToggler);

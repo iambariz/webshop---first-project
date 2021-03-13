@@ -13,7 +13,9 @@ const adressInput = document.querySelector(".input-adress");
 let editMode = false;
 
 function editToggler() {
+    toggleEdit();
     if (editMode == false) {
+        console.log("this is false")
         toggleDisplay(editUserBtn, doneBtn);
         toggleDisplay(firstNameDisplays[1], firstNameInput, );
         toggleDisplay(surNameDisplays[1], surNameInput, );
@@ -21,14 +23,13 @@ function editToggler() {
         checkLogin();
     }
     if (editMode == true) {
-        toggleDisplay(doneBtn, editUserBtn);
-        toggleDisplay(firstNameDisplays[1], firstNameInput, );
-        toggleDisplay(surNameDisplays[1], surNameInput, );
-        toggleDisplay(adressField, adressInput, );
+        toggleDisplay(doneBtn, editUserBtn, );
+        toggleDisplay(firstNameInput, firstNameDisplays[1], );
+        toggleDisplay(surNameInput, surNameDisplays[1], );
+        toggleDisplay(adressInput, adressField, );
         checkLogin();
         displayName();
     }
-    toggleEdit();
 }
 
 function toggleDisplay(x, y) {
@@ -45,13 +46,12 @@ function toggleDisplay(x, y) {
 }
 
 function displayName() {
-    console.log("in")
     loggedInList = loggedInUser();
     firstNameDisplays.forEach(function (e) {
         e.textContent = loggedInList[0].firstName
     })
     surNameDisplays.forEach(function (e) {
-        e.textContent = loggedInList[0].surName
+        e.textContent = loggedInList[0].lastName
     })
 }
 

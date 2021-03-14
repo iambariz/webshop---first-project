@@ -15,7 +15,6 @@ let editMode = false;
 function editToggler() {
     toggleEdit();
     if (editMode == false) {
-        console.log("this is false")
         toggleDisplay(editUserBtn, doneBtn);
         toggleDisplay(firstNameDisplays[1], firstNameInput, );
         toggleDisplay(surNameDisplays[1], surNameInput, );
@@ -29,6 +28,7 @@ function editToggler() {
         toggleDisplay(adressInput, adressField, );
         checkLogin();
         displayName();
+        addValue();
     }
 }
 
@@ -63,6 +63,12 @@ function toggleEdit() {
     }
 }
 
+function addValue() {
+    firstNameInput.value = firstNameDisplays[0].textContent;
+    surNameInput.value = surNameDisplays[0].textContent;
+    adressInput.value = adressField.textContent;
+}
 
+window.addEventListener('load', displayName);
 editUserBtn.addEventListener('click', editToggler);
 doneBtn.addEventListener('click', editToggler);

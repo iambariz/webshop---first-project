@@ -69,6 +69,16 @@ function addValue() {
     adressInput.value = adressField.textContent;
 }
 
+function logOut() {
+    console.log(loggedInList);
+    loggedInList = loggedInUser();
+    console.log(loggedInList);
+    loggedInList.splice(0, 1);
+    localStorage.setItem("loggedInUser", JSON.stringify(loggedInList));
+    window.location.href = "login.html";
+}
+
 window.addEventListener('load', displayName);
 editUserBtn.addEventListener('click', editToggler);
 doneBtn.addEventListener('click', editToggler);
+logOutBtn.addEventListener('click', logOut);

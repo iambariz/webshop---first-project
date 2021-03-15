@@ -117,7 +117,6 @@ function loginUser(name, id, firstName, lastName, time) {
         loggedIn: true,
     }
     loggedInList[0] = activeUser;
-    console.log(loggedInList);
     localStorage.setItem("loggedInUser", JSON.stringify(loggedInList));
 }
 

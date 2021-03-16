@@ -11,6 +11,7 @@ const surNameInput = document.querySelector(".input-sname");
 const adressInput = document.querySelector(".input-adress");
 
 let editMode = false;
+let editProblem = false;
 
 function editToggler() {
     toggleEdit();
@@ -70,16 +71,34 @@ function addValue() {
 }
 
 function logOut() {
-    console.log(loggedInList);
     loggedInList = loggedInUser();
-    console.log(loggedInList);
     loggedInList.splice(0, 1);
     localStorage.setItem("loggedInUser", JSON.stringify(loggedInList));
     window.location.href = "login.html";
 }
 
 function editUser() {
+    checkNewName();
+    if (editProblem == false && editMode == true) {
+        editCurrentUser();
+        editStorage();
+    } else {
+        //Display error
+    }
+}
 
+function checkNewName() {
+    if (firstNameInput.value.length && surNameInput.value.length) {
+        editMode = true;
+    }
+}
+
+function editCurrentUser() {
+    loggedInList = loggedInUser();
+    loggedInList[0].firstName = firstNameInput.value;
+    loggedInList[0].lastName = surNameInput.value;
+    loggedInList[0].adress = adressInput.value;
+    localStorage.setItem("loggedInUser", JSON.stringify(loggedInList));
 }
 
 window.addEventListener('load', displayName);

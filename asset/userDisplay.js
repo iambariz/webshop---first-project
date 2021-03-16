@@ -10,6 +10,8 @@ const firstNameInput = document.querySelector(".input-fname");
 const surNameInput = document.querySelector(".input-sname");
 const adressInput = document.querySelector(".input-adress");
 
+let accountData = getUserStorage();
+
 let editMode = false;
 let editProblem = false;
 
@@ -21,6 +23,7 @@ function editToggler() {
         toggleDisplay(surNameDisplays[1], surNameInput, );
         toggleDisplay(adressField, adressInput, );
         checkLogin();
+        editUser();
     }
     if (editMode == true) {
         toggleDisplay(doneBtn, editUserBtn, );
@@ -79,16 +82,17 @@ function logOut() {
 
 function editUser() {
     checkNewName();
-    if (editProblem == false && editMode == true) {
+    if (editMode == true) {
         editCurrentUser();
         editStorage();
+        location.reload();
     } else {
-        //Display error
+
     }
 }
 
 function checkNewName() {
-    if (firstNameInput.value.length && surNameInput.value.length) {
+    if (firstNameInput.value.length > 1 && surNameInput.value.length > 1) {
         editMode = true;
     }
 }
@@ -99,6 +103,23 @@ function editCurrentUser() {
     loggedInList[0].lastName = surNameInput.value;
     loggedInList[0].adress = adressInput.value;
     localStorage.setItem("loggedInUser", JSON.stringify(loggedInList));
+}
+
+function editStorage() {
+    index = getCurrentId();
+    accountData[index].firstName = firstNameInput.value;
+    accountData[index].lastName = surNameInput.value;
+    accountData[index].adress = adressInput.value;
+    localStorage.setItem("userNames", JSON.stringify(accountData));
+}
+
+function getCurrentId() {
+    for (let i = 0; i < accountData.length; i++) {
+        const currentName = accountData[i].userName;
+        if (currentName == loggedInList[0].userName) {
+            return i;
+        }
+    }
 }
 
 window.addEventListener('load', displayName);

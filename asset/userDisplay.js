@@ -78,6 +78,10 @@ function logOut() {
     window.location.href = "login.html";
 }
 
+function editUser() {
+
+}
+
 window.addEventListener('load', displayName);
 editUserBtn.addEventListener('click', editToggler);
 doneBtn.addEventListener('click', editToggler);

@@ -106,15 +106,15 @@ function loggedInUser() {
         JSON.parse(localStorage.getItem('loggedInUser')) : []
 }
 
-function loginUser(name, id, firstName, lastName, time) {
+function loginUser(name, id, firstName, lastName, adress) {
     loggedInList = loggedInUser();
     const activeUser = {
         userName: name,
         firstName: firstName,
         lastName: lastName,
         id: id,
-        time: time,
         loggedIn: true,
+        adress: adress,
     }
     loggedInList[0] = activeUser;
     localStorage.setItem("loggedInUser", JSON.stringify(loggedInList));

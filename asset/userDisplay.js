@@ -57,6 +57,7 @@ function displayName() {
     surNameDisplays.forEach(function (e) {
         e.textContent = loggedInList[0].lastName
     })
+    adressField.textContent = loggedInList[0].adress
 }
 
 function toggleEdit() {

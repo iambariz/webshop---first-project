@@ -90,6 +90,7 @@ function adminSetup() {
             firstName: "Firstname",
             lastName: "Lastname",
             password: "Admin",
+            adress: "Admin-Adress",
             id: 0,
         }
         accountData.push(admin);

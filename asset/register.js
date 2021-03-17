@@ -89,11 +89,11 @@ function checkReq() {
             email: emailField.value,
             password: newPw,
             id: new Date().getTime(),
+            adress: "Please change",
         }
-        console.log("Passed")
         accountData.push(user);
         localStorage.setItem("userNames", JSON.stringify(accountData));
-        window.location.reload();
+        window.location.href = 'login.html';
     } else {
         decideError();
     }

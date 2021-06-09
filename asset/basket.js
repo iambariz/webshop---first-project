@@ -13,6 +13,7 @@ class Item {
 //Sidebar display
 function basketDisplay(array) {
     let display = array.map(function (item) {
+        const price = item.price.toFixed(2);
         return `
     <li class="basket-item">
         <div class="basket-container" data-id="${item.id}">
@@ -20,7 +21,7 @@ function basketDisplay(array) {
                 <span class="item-name">${item.title}</span>
                 <span class="times">(${item.quantity}x)</span>
                 <i class="fas fa-times"></i>
-                <span class="item-price"> ${item.price}£</span>
+                <span class="item-price"> ${price}£</span>
             </p>
         </div>
     </li>
